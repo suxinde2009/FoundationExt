@@ -12,6 +12,8 @@
 		1F63103B26EAF98C00BCF22B /* FIFOThreadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63103A26EAF98C00BCF22B /* FIFOThreadTests.swift */; };
 		1F63104126EAFED500BCF22B /* AsyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63104026EAFED500BCF22B /* AsyncTests.swift */; };
 		1F63104526EAFF2D00BCF22B /* AsyncGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63104426EAFF2D00BCF22B /* AsyncGroupTests.swift */; };
+		1F63105E26EB0AD500BCF22B /* AtomicVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63105D26EB0AD500BCF22B /* AtomicVar.swift */; };
+		1F63106426EB0F7000BCF22B /* AtomicVarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63106326EB0F7000BCF22B /* AtomicVarTests.swift */; };
 		1F659F9F26DF2D8000ABA47A /* FoundationExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F659F9526DF2D7F00ABA47A /* FoundationExt.framework */; };
 		1F659FA426DF2D8000ABA47A /* FoundationExtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F659FA326DF2D8000ABA47A /* FoundationExtTests.swift */; };
 		1F659FA626DF2D8000ABA47A /* FoundationExt.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F659F9826DF2D7F00ABA47A /* FoundationExt.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,6 +37,8 @@
 		1F63103A26EAF98C00BCF22B /* FIFOThreadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIFOThreadTests.swift; sourceTree = "<group>"; };
 		1F63104026EAFED500BCF22B /* AsyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncTests.swift; sourceTree = "<group>"; };
 		1F63104426EAFF2D00BCF22B /* AsyncGroupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncGroupTests.swift; sourceTree = "<group>"; };
+		1F63105D26EB0AD500BCF22B /* AtomicVar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicVar.swift; sourceTree = "<group>"; };
+		1F63106326EB0F7000BCF22B /* AtomicVarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicVarTests.swift; sourceTree = "<group>"; };
 		1F659F9526DF2D7F00ABA47A /* FoundationExt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FoundationExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F659F9826DF2D7F00ABA47A /* FoundationExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoundationExt.h; sourceTree = "<group>"; };
 		1F659F9926DF2D7F00ABA47A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +68,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F63105A26EB0A8A00BCF22B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				1F63105B26EB0A9500BCF22B /* Concurrent */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		1F63105B26EB0A9500BCF22B /* Concurrent */ = {
+			isa = PBXGroup;
+			children = (
+				1F63103226EAF2C500BCF22B /* Async.swift */,
+				1F63103626EAF85900BCF22B /* FIFOThread.swift */,
+				1F63105C26EB0AAC00BCF22B /* Atomic */,
+			);
+			path = Concurrent;
+			sourceTree = "<group>";
+		};
+		1F63105C26EB0AAC00BCF22B /* Atomic */ = {
+			isa = PBXGroup;
+			children = (
+				1F63105D26EB0AD500BCF22B /* AtomicVar.swift */,
+			);
+			path = Atomic;
+			sourceTree = "<group>";
+		};
 		1F659F8B26DF2D7F00ABA47A = {
 			isa = PBXGroup;
 			children = (
@@ -85,11 +115,10 @@
 		1F659F9726DF2D7F00ABA47A /* FoundationExt */ = {
 			isa = PBXGroup;
 			children = (
+				1F63105A26EB0A8A00BCF22B /* Util */,
 				1F659F9826DF2D7F00ABA47A /* FoundationExt.h */,
 				1F659FB626DF300C00ABA47A /* BundleExtensions.swift */,
 				1F659FBA26DF30F400ABA47A /* NSCharacterSetExtensions.swift */,
-				1F63103226EAF2C500BCF22B /* Async.swift */,
-				1F63103626EAF85900BCF22B /* FIFOThread.swift */,
 				1F659F9926DF2D7F00ABA47A /* Info.plist */,
 			);
 			path = FoundationExt;
@@ -102,6 +131,7 @@
 				1F63103A26EAF98C00BCF22B /* FIFOThreadTests.swift */,
 				1F63104026EAFED500BCF22B /* AsyncTests.swift */,
 				1F63104426EAFF2D00BCF22B /* AsyncGroupTests.swift */,
+				1F63106326EB0F7000BCF22B /* AtomicVarTests.swift */,
 				1F659FA526DF2D8000ABA47A /* Info.plist */,
 			);
 			path = FoundationExtTests;
@@ -218,6 +248,7 @@
 			files = (
 				1F659FB726DF300C00ABA47A /* BundleExtensions.swift in Sources */,
 				1F63103326EAF2C500BCF22B /* Async.swift in Sources */,
+				1F63105E26EB0AD500BCF22B /* AtomicVar.swift in Sources */,
 				1F659FBB26DF30F400ABA47A /* NSCharacterSetExtensions.swift in Sources */,
 				1F63103726EAF85900BCF22B /* FIFOThread.swift in Sources */,
 			);
@@ -231,6 +262,7 @@
 				1F63103B26EAF98C00BCF22B /* FIFOThreadTests.swift in Sources */,
 				1F63104526EAFF2D00BCF22B /* AsyncGroupTests.swift in Sources */,
 				1F63104126EAFED500BCF22B /* AsyncTests.swift in Sources */,
+				1F63106426EB0F7000BCF22B /* AtomicVarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
