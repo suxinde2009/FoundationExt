@@ -54,9 +54,11 @@ public class AtomicVar<T>: NSObject {
         guard isSuccess == true else {
             return false
         }
-        didSet(newValue)
+        didSetAction?(newValue)
         return true
     }
+    
+    
     
     
     /// Acquire the value, if timeout, will return nil
@@ -116,15 +118,12 @@ public class AtomicVar<T>: NSObject {
             timeoutAction: nil
         )
         
-        if isSuccess {
-            didSet(updatedValue)
-            return true
-        } else {
+        guard isSuccess == true else {
             return false
         }
+        didSetAction?(updatedValue)
+        return true
     }
-    
-    
     
     /// Action invoked after value has been set, the default action is nil
     private var didSetAction: ((T?) -> Void)? = nil
@@ -149,12 +148,6 @@ public class AtomicVar<T>: NSObject {
 }
 
 fileprivate extension AtomicVar {
-    
-    /// Action invoked after value has been set
-    /// - Parameter value: the value which has been set
-    private func didSet(_ value: T?) {
-        didSetAction?(value)
-    }
     
     /// Attempts to acquire a lock and immediately returns a Boolean value that indicates whether the attempt was successful.
     
