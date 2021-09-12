@@ -8,10 +8,6 @@
 import XCTest
 @testable import FoundationExt
 
-func delay(_ time: Double, block: @escaping () -> Void) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + time) { block() }
-}
-
 extension Int: CacheCostCalculable {
     public var cacheCost: Int {
         return 1

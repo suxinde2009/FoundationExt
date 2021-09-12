@@ -7,6 +7,10 @@
 
 import Foundation
 
+fileprivate func address(of object: Any?) -> UnsafeMutableRawPointer{
+    return Unmanaged.passUnretained(object as AnyObject).toOpaque()
+}
+
 @objc public class Runtime: NSObject {
     
     public static let shared = Runtime()
@@ -25,8 +29,8 @@ import Foundation
                 classes.append(currentClass)
             }
         }
-        
         allClasses.deallocate()
+        
         return classes.map { Class_t($0) }
     }()
     
@@ -65,6 +69,12 @@ import Foundation
         }
         return frameworks
     }()
+    
+    
+    public func subClasses(of theClass: AnyClass) -> [Class_t] {
+        let theClassWrapper = Class_t(theClass.self)
+        return theClassWrapper.getSubClasses()
+    }
 }
 
 
@@ -74,6 +84,10 @@ public extension Runtime {
     class Attribute_t {
         public fileprivate(set) var att : objc_property_attribute_t
         public fileprivate(set) lazy var name : String = {
+            return Type_t.type(for: String(utf8String:att.name) ?? "").toDescrption()
+        }()
+        
+        public fileprivate(set) lazy var rawName : String = {
             return String(utf8String:att.name) ?? ""
         }()
         
@@ -84,7 +98,65 @@ public extension Runtime {
         fileprivate init(_ att: objc_property_attribute_t) {
             self.att = att
         }
+        
+        public enum Type_t {
+            case readOnly
+            case nonAtomic
+            case dynamic
+            case weak
+            case copy
+            case retain
+            case getterSelector
+            case setterSelector
+            case typeEncoding
+            case variableName
+            case unkown
+            
+            public static func type(for key: String) -> Type_t {
+                switch key {
+                    case "R": return .readOnly
+                    case "N": return .nonAtomic
+                    case "D": return .dynamic
+                    case "W": return .weak
+                    case "C": return .copy
+                    case "&": return .retain
+                    case "G": return .getterSelector
+                    case "S": return .setterSelector
+                    case "T": return .typeEncoding
+                    case "V": return .variableName
+                    default: return .unkown
+                }
+            }
+            
+            public func toDescrption() -> String {
+                switch self {
+                    case .readOnly:
+                        return "readOnly"
+                    case .nonAtomic:
+                        return "nonAtomic"
+                    case .dynamic:
+                        return "dynamic"
+                    case .weak:
+                        return "weak"
+                    case .copy:
+                        return "copy"
+                    case .retain:
+                        return "retain"
+                    case .getterSelector:
+                        return "getterSelector"
+                    case .setterSelector:
+                        return "setterSelector"
+                    case .typeEncoding:
+                        return "typeEncoding"
+                    case .variableName:
+                        return "variableName"
+                    default:
+                        return "unkown"
+                }
+            }
+        }
     }
+    
     
     /// <#Description#>
     class Ivar_t {
@@ -93,6 +165,15 @@ public extension Runtime {
             let ivarName = ivar_getName(ivar)
             let ivarNameStr = String(cString: ivarName!)
             return ivarNameStr
+        }()
+        
+        public fileprivate(set) lazy var typeEncoding: String? = {
+            guard let typePointer = ivar_getTypeEncoding(ivar) else { return nil }
+            return String(cString: typePointer)
+        }()
+        
+        public fileprivate(set) lazy var offset: Int = {
+            return ivar_getOffset(ivar)
         }()
         
         fileprivate init(_ ivar : Ivar) {
@@ -253,7 +334,7 @@ public extension Runtime {
         }
         
         
-        public static func instantiate(from cls:AnyClass) -> AnyObject {
+        public static func instantiate(from cls: AnyClass) -> AnyObject {
             return class_createInstance(cls, class_getInstanceSize(cls)) as AnyObject
         }
         
@@ -327,9 +408,53 @@ public extension Runtime {
             return procotols
         }()
         
+        
+        public func getClassHierarchy() -> [Class_t] {
+            var hierarcy = [AnyClass]()
+            hierarcy.append(self.runtimeClass)
+            var currentSuper: AnyClass? = class_getSuperclass(self.runtimeClass)
+            while currentSuper != nil {
+                hierarcy.append(currentSuper!)
+                currentSuper = class_getSuperclass(currentSuper)
+            }
+            return hierarcy.map { Class_t($0) }
+        }
+        
+        public func getSubClasses() -> [Class_t] {
+            let expectedClassCount = objc_getClassList(nil, 0)
+            let allClasses = UnsafeMutablePointer<AnyClass?>.allocate(capacity: Int(expectedClassCount))
+            
+            let autoreleasingAllClasses = AutoreleasingUnsafeMutablePointer<AnyClass>(allClasses)
+            let actualClassCount: Int32 = objc_getClassList(autoreleasingAllClasses, expectedClassCount)
+            
+            let classPtr = address(of: self.runtimeClass)
+            
+            var result: [AnyClass] = []
+            
+            for i in 0 ..< actualClassCount {
+                if let clazz: AnyClass = allClasses[Int(i)] {
+                    guard
+                        let someSuperClass = class_getSuperclass(clazz),
+                        address(of: someSuperClass) == classPtr
+                    else {
+                        continue
+                    }
+                    result.append(clazz)
+                }
+            }
+            allClasses.deallocate()
+            
+            return result.map { Class_t($0) }
+        }
+        
+        
+        lazy var description: String = {
+            return "\(name)"
+        }()
+        
         @available(*, unavailable, message: "This is not available")
         public var objects : [Object_t] {
-            var objects = [Object_t]()
+            let objects = [Object_t]()
             return objects
         }
     }
@@ -397,16 +522,60 @@ public extension Runtime {
 
 public extension Runtime {
     
-//    class
+    class Util {
+        static func valueForType(type: String) -> String {
+            switch type {
+                case "c" : return "Int8"
+                case "s" : return "Int16"
+                case "i" : return "Int32"
+                case "q" : return "Int"
+                case "S" : return "UInt16"
+                case "I" : return "UInt32"
+                case "Q" : return "UInt"
+                case "B" : return "Bool"
+                case "d" : return "Double"
+                case "f" : return "Float"
+                case "{" : return "Decimal"
+                default: return type
+            }
+        }
+    }
     
+}
+
+public extension Runtime.Method_t {
+    func swapImplementation(with method: Method) {
+        method_exchangeImplementations(self.method, method)
+    }
+    
+    func swapImplementation(with lmMethod: Runtime.Method_t) {
+        method_exchangeImplementations(self.method, lmMethod.method)
+    }
+}
+
+public extension String {
+    func toPointer(completion: @escaping (UnsafePointer<Int8>) -> ()) {
+        self.withCString { (pointer) -> () in
+            completion(pointer)
+        }
+    }
+    
+    // Source: https://github.com/apple/swift/blob/master/stdlib/public/core/Pointer.swift#L85-L92
+    func toPointer() -> UnsafePointer<Int8> {
+        let utf8 = Array(self.utf8CString)
+        return _convertConstArrayToPointerArgument(utf8).1
+    }
+}
+
+public extension Runtime {
     
     /// <#Description#>
     /// - Parameters:
     ///   - object: <#object description#>
     ///   - key: <#key description#>
     /// - Returns: <#description#>
-    public static func getAssociatedObject<T>(_ object: Any,
-                                              _ key: UnsafeRawPointer) -> T? {
+    static func getAssociatedObject<T>(_ object: Any,
+                                       _ key: UnsafeRawPointer) -> T? {
         return objc_getAssociatedObject(object, key) as? T
     }
     
@@ -416,8 +585,8 @@ public extension Runtime {
     ///   - object: <#object description#>
     ///   - key: <#key description#>
     ///   - value: <#value description#>
-    public static func setRetainedAssociatedObject<T>(_ object: Any,
-                                                      _ key: UnsafeRawPointer, _ value: T) {
+    static func setRetainedAssociatedObject<T>(_ object: Any,
+                                               _ key: UnsafeRawPointer, _ value: T) {
         objc_setAssociatedObject(object, key, value, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
     
@@ -427,8 +596,8 @@ public extension Runtime {
     ///   - object: <#object description#>
     ///   - key: <#key description#>
     ///   - value: <#value description#>
-    public static func setAssignedAssociatedObject<T>(_ object: Any,
-                                                      _ key: UnsafeRawPointer, _ value: T) {
+    static func setAssignedAssociatedObject<T>(_ object: Any,
+                                               _ key: UnsafeRawPointer, _ value: T) {
         objc_setAssociatedObject(object, key, value, .OBJC_ASSOCIATION_ASSIGN)
     }
 }

@@ -8,6 +8,12 @@
 import XCTest
 @testable import FoundationExt
 
+fileprivate class ClassA: NSObject {}
+fileprivate class SubClassA1 : ClassA {}
+fileprivate class SubClassA2: ClassA {}
+fileprivate class ClassB: ClassA {}
+fileprivate class ClassC: ClassB {}
+
 protocol MockProtocol : class {}
 
 class NSMockClass : NSObject {
@@ -152,6 +158,45 @@ class Class_t_Tests: XCTestCase {
         XCTAssertNotNil(aSelector.name)
         XCTAssertNotNil(aSelector.sel)
         XCTAssertTrue(aSelector != aSelector2)
+    }
+    
+    func testGetSubClassesOfOneClass() {
+        let exp = expectation(description: #function)
+        delay(0.5) {
+            let classA = Runtime.Class_t(ClassA.self)
+            NSLog("\nSubClassesOf \(classA.name): ")
+            var str = ""
+            let subClassess = classA.getSubClasses()
+            for (_, item) in subClassess.enumerated() {
+                str.append(item.name+"\n")
+            }
+            NSLog(str)
+            exp.fulfill()
+        }
+        waitForExpectations(timeout: 1000, handler: nil)
+    }
+    
+    func testGetClassHierarchy() {
+        
+        let exp = expectation(description: #function)
+        delay(0.5) {
+            let classC = Runtime.Class_t(ClassC.self)
+            NSLog("\nClassHierarchy Of \(classC.name):")
+            var str = ""
+            let classHierarchy = classC.getClassHierarchy().reversed()
+            for (idx, item) in classHierarchy.enumerated() {
+                if idx > 0 {
+                    for _ in 0..<idx {
+                        str.append("-")
+                    }
+                }
+                str.append(item.name+"\n")
+            }
+            NSLog(str)
+            exp.fulfill()
+        }
+        waitForExpectations(timeout: 1000, handler: nil)
+        
     }
     
 }

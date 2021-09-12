@@ -22,6 +22,7 @@
 		1F05468326ECF70F00E64F3C /* MemoryStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05468226ECF70F00E64F3C /* MemoryStorageTests.swift */; };
 		1F05469126ECF7E800E64F3C /* DiskStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05469026ECF7E800E64F3C /* DiskStorageTests.swift */; };
 		1F49EFF626EE080F0028C06F /* RuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49EFF526EE080F0028C06F /* RuntimeTests.swift */; };
+		1F49EFFE26EE22B40028C06F /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49EFFD26EE22B40028C06F /* TestHelpers.swift */; };
 		1F63103326EAF2C500BCF22B /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63103226EAF2C500BCF22B /* Async.swift */; };
 		1F63103726EAF85900BCF22B /* FIFOThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63103626EAF85900BCF22B /* FIFOThread.swift */; };
 		1F63103B26EAF98C00BCF22B /* FIFOThreadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63103A26EAF98C00BCF22B /* FIFOThreadTests.swift */; };
@@ -66,6 +67,7 @@
 		1F05468226ECF70F00E64F3C /* MemoryStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorageTests.swift; sourceTree = "<group>"; };
 		1F05469026ECF7E800E64F3C /* DiskStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorageTests.swift; sourceTree = "<group>"; };
 		1F49EFF526EE080F0028C06F /* RuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeTests.swift; sourceTree = "<group>"; };
+		1F49EFFD26EE22B40028C06F /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		1F63103226EAF2C500BCF22B /* Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		1F63103626EAF85900BCF22B /* FIFOThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIFOThread.swift; sourceTree = "<group>"; };
 		1F63103A26EAF98C00BCF22B /* FIFOThreadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIFOThreadTests.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				1F05466A26ECEB1A00E64F3C /* Delegate.swift */,
 				1F05467226ECEE6300E64F3C /* String+MD5.swift */,
 				1F05467E26ECF51700E64F3C /* RetryStrategy.swift */,
+				1F659F9826DF2D7F00ABA47A /* FoundationExt.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -201,7 +204,6 @@
 				1F63107026EB1BC100BCF22B /* Math */,
 				1F63106F26EB1B7900BCF22B /* Net */,
 				1F63105A26EB0A8A00BCF22B /* Util */,
-				1F659F9826DF2D7F00ABA47A /* FoundationExt.h */,
 				1F659F9926DF2D7F00ABA47A /* Info.plist */,
 			);
 			path = FoundationExt;
@@ -221,6 +223,7 @@
 				1F05469026ECF7E800E64F3C /* DiskStorageTests.swift */,
 				1F63107926EB1E5900BCF22B /* AsyncTaskQueueTests.swift */,
 				1F49EFF526EE080F0028C06F /* RuntimeTests.swift */,
+				1F49EFFD26EE22B40028C06F /* TestHelpers.swift */,
 				1F659FA526DF2D8000ABA47A /* Info.plist */,
 			);
 			path = FoundationExtTests;
@@ -371,6 +374,7 @@
 				1F63107A26EB1E5900BCF22B /* AsyncTaskQueueTests.swift in Sources */,
 				1F63104126EAFED500BCF22B /* AsyncTests.swift in Sources */,
 				1F63106426EB0F7000BCF22B /* AtomicVarTests.swift in Sources */,
+				1F49EFFE26EE22B40028C06F /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +531,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyprayer.FoundationExt;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -554,7 +558,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyprayer.FoundationExt;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
