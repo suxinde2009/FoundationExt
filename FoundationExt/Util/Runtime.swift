@@ -235,11 +235,31 @@ public extension Runtime {
         
         public static func == (lhs: Runtime.Protocol_t,
                                rhs: Runtime.Protocol_t) -> Bool {
+            return lhs.isEqualTo(rhs)
+        }
+        
+        public func isEqualTo(_ aProtocol: Protocol_t) -> Bool {
             return protocol_isEqual(
-                lhs.runtimeProtocol,
-                rhs.runtimeProtocol
+                self.runtimeProtocol,
+                aProtocol.runtimeProtocol
             )
         }
+        
+        public func addConformanceTo(_ aProtocol: Protocol_t) {
+            protocol_addProtocol(
+                self.runtimeProtocol,
+                aProtocol.runtimeProtocol
+            )
+        }
+        
+        /// Wrapper for: func protocol_conformsToProtocol(Protocol?, Protocol?) -> Bool
+        public func conforms(to aProtocol: Protocol_t) -> Bool {
+            return protocol_conformsToProtocol(
+                self.runtimeProtocol,
+                aProtocol.runtimeProtocol
+            )
+        }
+
     }
     
     class Selector_t : Equatable {
@@ -296,7 +316,12 @@ public extension Runtime {
         }
         
         
-        public class Description_t {
+        public enum Type_t {
+            case instance
+            case `class`
+        }
+        
+        public class Description {
             public fileprivate(set) var description : objc_method_description
             public fileprivate(set) lazy var name : Selector? = {
                 return description.name
@@ -350,7 +375,9 @@ public extension Runtime {
             return Framework_t(image)
         }()
         
-        public fileprivate(set) lazy var name : String = { return String(cString: class_getName(runtimeClass))}()
+        public fileprivate(set) lazy var name : String = {
+            return String(cString: class_getName(runtimeClass))
+        }()
         
         public fileprivate(set) lazy var ivars : [Ivar] = {
             var ivars = [Ivar]()
@@ -367,7 +394,7 @@ public extension Runtime {
             return ivars
         }()
         
-        public fileprivate(set) lazy var props : [Property_t] = {
+        public fileprivate(set) lazy var properties : [Property_t] = {
             var props = [Property_t]()
             var propCount : UInt32 = 0
             let propList = class_copyPropertyList(runtimeClass, &propCount)
@@ -447,6 +474,25 @@ public extension Runtime {
             return result.map { Class_t($0) }
         }
         
+        /// Wrapper for: func class_addProtocol(AnyClass?, Protocol) -> Bool
+        public func addProtocol(_ aProtocol: Protocol_t) {
+            class_addProtocol(
+                self.runtimeClass,
+                aProtocol.runtimeProtocol
+            )
+        }
+        
+        /// Wrapper for: func class_getInstanceMethod(AnyClass?, Selector) -> Method?
+        public func getInstanceMethod(selector: Selector_t) -> Method_t? {
+            guard let method = class_getInstanceMethod(self.runtimeClass, selector.sel) else { return nil }
+            return Method_t(method)
+        }
+        
+        /// Wrapper for: func class_getClassMethod(AnyClass?, Selector) -> Method?
+        public func getClassMethod(selector: Selector_t) -> Method_t? {
+            guard let method = class_getClassMethod(self.runtimeClass, selector.sel) else { return nil }
+            return Method_t(method)
+        }
         
         lazy var description: String = {
             return "\(name)"

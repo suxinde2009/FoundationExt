@@ -108,7 +108,7 @@ class Class_t_Tests: XCTestCase {
         XCTAssertNotNil(cls?.runtimeClass)
         XCTAssertNotNil(cls?.baseClass)
         XCTAssertNotNil(cls?.protocols)
-        XCTAssertNotNil(cls?.props)
+        XCTAssertNotNil(cls?.properties)
     }
     
     func testClassProperties(){
