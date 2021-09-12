@@ -13,15 +13,21 @@ import Foundation
     
     ///List of registered classes in runtime
     public fileprivate(set) lazy var classes : [Class_t] = {
-        var classes = [Class_t]()
-        var clsCount : UInt32 = 0
-        guard let clsList = objc_copyClassList(&clsCount), clsCount > 0 else {
-            return []
+        let expectedClassCount = objc_getClassList(nil, 0)
+        let allClasses = UnsafeMutablePointer<AnyClass?>.allocate(capacity: Int(expectedClassCount))
+        
+        let autoreleasingAllClasses = AutoreleasingUnsafeMutablePointer<AnyClass>(allClasses)
+        let actualClassCount: Int32 = objc_getClassList(autoreleasingAllClasses, expectedClassCount)
+        
+        var classes = [AnyClass]()
+        for i in 0 ..< actualClassCount {
+            if let currentClass: AnyClass = allClasses[Int(i)] {
+                classes.append(currentClass)
+            }
         }
-        for i in 0..<clsCount {
-            classes.append(Class_t(clsList[Int(i)]))
-        }
-        return classes
+        
+        allClasses.deallocate()
+        return classes.map { Class_t($0) }
     }()
     
     
