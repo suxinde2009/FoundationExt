@@ -1,9 +1,10 @@
 MIT License
 
 # Licences
-# [FoundationExt](https://github.com/suxinde2009/FoundationExt)
-~~~
 
+# [FoundationExt](https://github.com/suxinde2009/FoundationExt)
+
+```
 Copyright (c) 2011-Present __承_影__
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,12 +24,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-~~~
+
+```
 
 
 # [Async](https://github.com/duemunk/Async)
 
-~~~
+```
 
 The MIT License (MIT)
 Copyright (c) 2014 Tobias Due Munk
@@ -50,11 +52,11 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-~~~
+```
 
 # [Thread](https://github.com/duemunk/Thread)
 
-~~~
+```
 The MIT License (MIT)
 
 Copyright (c) 2015 Tobias Due Munk
@@ -76,11 +78,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-~~~
+```
 
 # [Kingfisher](https://github.com/onevcat/Kingfisher)
 
-~~~
+```
 
 The MIT License (MIT)
 
@@ -105,12 +107,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-~~~
+```
 
 
 # [Swift-Runtime](https://github.com/haikieu/Swift-Runtime)
 
-~~~
+```
 
 MIT License
 
@@ -135,4 +137,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-~~~
+```
