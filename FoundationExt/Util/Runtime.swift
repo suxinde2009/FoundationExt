@@ -17,21 +17,7 @@ fileprivate func address(of object: Any?) -> UnsafeMutableRawPointer{
     
     ///List of registered classes in runtime
     public fileprivate(set) lazy var classes : [Class_t] = {
-        let expectedClassCount = objc_getClassList(nil, 0)
-        let allClasses = UnsafeMutablePointer<AnyClass?>.allocate(capacity: Int(expectedClassCount))
-        
-        let autoreleasingAllClasses = AutoreleasingUnsafeMutablePointer<AnyClass>(allClasses)
-        let actualClassCount: Int32 = objc_getClassList(autoreleasingAllClasses, expectedClassCount)
-        
-        var classes = [AnyClass]()
-        for i in 0 ..< actualClassCount {
-            if let currentClass: AnyClass = allClasses[Int(i)] {
-                classes.append(currentClass)
-            }
-        }
-        allClasses.deallocate()
-        
-        return classes.map { Class_t($0) }
+        return Class_t.allClasses()
     }()
     
     
@@ -474,6 +460,28 @@ public extension Runtime {
             return result.map { Class_t($0) }
         }
         
+        public static func allClasses() -> [Class_t] {
+            let expectedClassCount = objc_getClassList(nil, 0)
+            let allClasses = UnsafeMutablePointer<AnyClass?>.allocate(capacity: Int(expectedClassCount))
+            
+            let autoreleasingAllClasses = AutoreleasingUnsafeMutablePointer<AnyClass>(allClasses)
+            let actualClassCount: Int32 = objc_getClassList(autoreleasingAllClasses, expectedClassCount)
+            
+            var classes = [AnyClass]()
+            for i in 0 ..< actualClassCount {
+                if let currentClass: AnyClass = allClasses[Int(i)] {
+                    classes.append(currentClass)
+                }
+            }
+            allClasses.deallocate()
+            
+            return classes.map { Class_t($0) }
+        }
+        
+        public func classesImplementedProtocol(_ requiredProtocol: Protocol_t) -> [Class_t] {
+            return  Class_t.allClasses().filter { $0.conforms(to: requiredProtocol) }
+        }
+        
         /// Wrapper for: func class_addProtocol(AnyClass?, Protocol) -> Bool
         public func addProtocol(_ aProtocol: Protocol_t) {
             class_addProtocol(
@@ -492,6 +500,13 @@ public extension Runtime {
         public func getClassMethod(selector: Selector_t) -> Method_t? {
             guard let method = class_getClassMethod(self.runtimeClass, selector.sel) else { return nil }
             return Method_t(method)
+        }
+        
+        public func conforms(to aProtocol: Protocol_t) -> Bool {
+            return class_conformsToProtocol(
+                self.runtimeClass,
+                aProtocol.runtimeProtocol
+            )
         }
         
         lazy var description: String = {
