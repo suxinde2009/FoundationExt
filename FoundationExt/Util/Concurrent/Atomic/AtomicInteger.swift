@@ -12,43 +12,58 @@ import Foundation
 /// An int value that may be updated atomically.
 public class AtomicInteger: NSObject {
     
-    fileprivate var value: AtomicVar<Int> = AtomicVar<Int>(0)
+    fileprivate var value: Int = 0
+    
+    fileprivate var lock = NSLock()
+    
+    deinit {
+        lock.unlock()
+    }
     
     init(integer: Int) {
         super.init()
-        value = AtomicVar<Int>(integer)
+        self.set(newValue: integer)
     }
     
     
     /// Returns the current integer value
     /// - Returns: the current integer value
     public final func get() -> Int {
-        return value.get() ?? 0
+        var returnValue = 0
+        lock.lock()
+        returnValue = value
+        lock.unlock()
+        return returnValue
     }
     
     /// Sets the value to newValue
     /// - Parameter newValue: the new value
     /// - Returns: true represents success, false represents failure.
-    @discardableResult
-    public final func set(newValue: Int) -> Bool {
-        return value.set(newValue)
+    public final func set(newValue: Int)  {
+        lock.lock()
+        value = newValue
+        lock.unlock()
     }
     
     /// Atomically increments the current value
     /// - Returns: true represents success, false represents failure.
-    @discardableResult
-    public final func increment() -> Bool {
-        let intValue = value.get() ?? 0
-        return value.set(intValue+1)
+    public final func increment() {
+        lock.lock()
+        
+        value = value + 1
+        
+        lock.unlock()
     }
     
     
     /// Atomically decrements the current value
     /// - Returns: true represents success, false represents failure.
-    @discardableResult
-    public final func decrement() -> Bool {
-        let intValue = value.get() ?? 0
-        return value.set(intValue-1)
+    public final func decrement()  {
+        lock.lock()
+        
+        value = value - 1
+        
+        lock.unlock()
     }
     
     /// Atomically increments the current value, and return the updated value

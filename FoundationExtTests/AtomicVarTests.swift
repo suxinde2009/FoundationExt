@@ -111,6 +111,52 @@ class AtomicVarTests: XCTestCase {
     }
     
     
+    
+    
+    func excute(block: (_ intValue: Int) -> Void) {
+        
+    }
+    
+    func testAtomicInteger() {
+        
+        let expectation1 = expectation(description: #function)
+        let atomicInteger = AtomicInteger(integer: 0)
+        var normalInteger = 0
+        
+        
+        let group = DispatchGroup()
+        
+        group.enter()
+        DispatchQueue(label: "queue1").async {
+            for _ in 0..<10000 {
+                atomicInteger.increment()
+                normalInteger += 1
+            }
+            group.leave()
+        }
+        
+        group.enter()
+        DispatchQueue(label: "queue2").async {
+            for _ in 0..<10000 {
+                atomicInteger.increment()
+                normalInteger += 1
+            }
+            group.leave()
+        }
+        
+        group.notify(queue: .main) {
+            DispatchQueue.main.async {
+                let expectedValue = 20000
+               
+                XCTAssert(atomicInteger.get() == expectedValue, "failed")
+                expectation1.fulfill()
+                
+            }
+        }
+        
+        waitForExpectations(timeout: 1000, handler: nil)
+    }
+    
     func testCases() {
         
        
