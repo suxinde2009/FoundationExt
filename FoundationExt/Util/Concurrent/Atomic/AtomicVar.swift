@@ -163,10 +163,14 @@ fileprivate extension AtomicVar {
                          timeout: TimeInterval = 0,
                          timeoutAction: (() -> Void)? = nil) -> Bool {
         
+        defer {
+            lock.unlock()
+        }
+        
         guard timeout > 0 else {
             lock.lock()
             action()
-            lock.unlock()
+            //lock.unlock()
             return true
         }
         
@@ -177,7 +181,7 @@ fileprivate extension AtomicVar {
         }
         
         action()
-        lock.unlock()
+        //lock.unlock()
         return true
     }
 }
