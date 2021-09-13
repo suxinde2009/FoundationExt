@@ -630,35 +630,74 @@ public extension String {
 
 public extension Runtime {
     
-    /// <#Description#>
-    /// - Parameters:
-    ///   - object: <#object description#>
-    ///   - key: <#key description#>
-    /// - Returns: <#description#>
-    static func getAssociatedObject<T>(_ object: Any,
-                                       _ key: UnsafeRawPointer) -> T? {
-        return objc_getAssociatedObject(object, key) as? T
+    /// Wrapper class for objc_Association relative stuffs.
+    class AssociatedObjects {
+        
+        /// Wrapper enum for `objc_AssociationPolicy`
+        public enum AssociationPolicy: UInt {
+            case assign = 0
+            case copy = 771
+            case copyNonatomic = 3
+            case retain = 769
+            case retainNonatomic = 1
+            
+            fileprivate var objc: objc_AssociationPolicy {
+                return objc_AssociationPolicy(rawValue: rawValue)!
+            }
+        }
+        
+        /// Returns the value associated with a given object for a given key.
+        /// - Parameters:
+        ///   - object: The source object for the association.
+        ///   - key: The key for the association.
+        /// - Returns: the return value.
+        static func getAssociatedObject<T>(_ object: Any,
+                                           _ key: UnsafeRawPointer) -> T? {
+            let returnValue =
+                objc_getAssociatedObject(
+                    object,
+                    key
+                ) as? T
+            return returnValue
+        }
+        
+        
+        /// Sets an associated value for a given object using a given key and association policy `OBJC_ASSOCIATION_RETAIN_NONATOMIC`.
+        /// - Parameters:
+        ///   - object: The source object for the association.
+        ///   - key: The key for the association.
+        ///   - value: The value to associate with the key key for object. Pass nil to clear an existing association.
+        static func setRetainedAssociatedObject<T>(_ object: Any,
+                                                   _ key: UnsafeRawPointer,
+                                                   _ value: T) {
+            objc_setAssociatedObject(
+                object,
+                key,
+                value,
+                AssociationPolicy.retainNonatomic.objc //.OBJC_ASSOCIATION_RETAIN_NONATOMIC
+            )
+        }
+        
+        
+      
+        /// Sets an associated value for a given object using a given key and association policy `OBJC_ASSOCIATION_ASSIGN`.
+        /// - Parameters:
+        ///   - object: The source object for the association.
+        ///   - key: The key for the association.
+        ///   - value: The value to associate with the key key for object. Pass nil to clear an existing association.
+        static func setAssignedAssociatedObject<T>(_ object: Any,
+                                                   _ key: UnsafeRawPointer,
+                                                   _ value: T) {
+            objc_setAssociatedObject(
+                object,
+                key,
+                value,
+                AssociationPolicy.assign.objc// .OBJC_ASSOCIATION_ASSIGN
+            )
+        }
+        
     }
     
     
-    /// <#Description#>
-    /// - Parameters:
-    ///   - object: <#object description#>
-    ///   - key: <#key description#>
-    ///   - value: <#value description#>
-    static func setRetainedAssociatedObject<T>(_ object: Any,
-                                               _ key: UnsafeRawPointer, _ value: T) {
-        objc_setAssociatedObject(object, key, value, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-    }
-    
-    
-    /// <#Description#>
-    /// - Parameters:
-    ///   - object: <#object description#>
-    ///   - key: <#key description#>
-    ///   - value: <#value description#>
-    static func setAssignedAssociatedObject<T>(_ object: Any,
-                                               _ key: UnsafeRawPointer, _ value: T) {
-        objc_setAssociatedObject(object, key, value, .OBJC_ASSOCIATION_ASSIGN)
-    }
+   
 }
