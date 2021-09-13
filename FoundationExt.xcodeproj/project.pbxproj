@@ -40,6 +40,7 @@
 		1F659FB726DF300C00ABA47A /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F659FB626DF300C00ABA47A /* BundleExtensions.swift */; };
 		1F659FBB26DF30F400ABA47A /* NSCharacterSetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F659FBA26DF30F400ABA47A /* NSCharacterSetExtensions.swift */; };
 		1F87476726EF2E66008B3FC3 /* DispatchQueuePoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87476626EF2E66008B3FC3 /* DispatchQueuePoolTests.swift */; };
+		1F87477826EF495B008B3FC3 /* AtomicInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87477726EF495B008B3FC3 /* AtomicInteger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		1F659FB626DF300C00ABA47A /* BundleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtensions.swift; sourceTree = "<group>"; };
 		1F659FBA26DF30F400ABA47A /* NSCharacterSetExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCharacterSetExtensions.swift; sourceTree = "<group>"; };
 		1F87476626EF2E66008B3FC3 /* DispatchQueuePoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueuePoolTests.swift; sourceTree = "<group>"; };
+		1F87477726EF495B008B3FC3 /* AtomicInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicInteger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				1F63105D26EB0AD500BCF22B /* AtomicVar.swift */,
+				1F87477726EF495B008B3FC3 /* AtomicInteger.swift */,
 			);
 			path = Atomic;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				1F05467F26ECF51700E64F3C /* RetryStrategy.swift in Sources */,
 				1F659FBB26DF30F400ABA47A /* NSCharacterSetExtensions.swift in Sources */,
 				1F05465B26ECE7A000E64F3C /* MemoryStorage.swift in Sources */,
+				1F87477826EF495B008B3FC3 /* AtomicInteger.swift in Sources */,
 				1F05466F26ECEBA200E64F3C /* DiskStorage.swift in Sources */,
 				1F63106826EB1B3100BCF22B /* AsyncOperation.swift in Sources */,
 				1F63103726EAF85900BCF22B /* FIFOThread.swift in Sources */,
