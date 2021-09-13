@@ -39,6 +39,7 @@
 		1F659FA626DF2D8000ABA47A /* FoundationExt.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F659F9826DF2D7F00ABA47A /* FoundationExt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F659FB726DF300C00ABA47A /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F659FB626DF300C00ABA47A /* BundleExtensions.swift */; };
 		1F659FBB26DF30F400ABA47A /* NSCharacterSetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F659FBA26DF30F400ABA47A /* NSCharacterSetExtensions.swift */; };
+		1F87476726EF2E66008B3FC3 /* DispatchQueuePoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87476626EF2E66008B3FC3 /* DispatchQueuePoolTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		1F659FA526DF2D8000ABA47A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F659FB626DF300C00ABA47A /* BundleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtensions.swift; sourceTree = "<group>"; };
 		1F659FBA26DF30F400ABA47A /* NSCharacterSetExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCharacterSetExtensions.swift; sourceTree = "<group>"; };
+		1F87476626EF2E66008B3FC3 /* DispatchQueuePoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueuePoolTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 				1F05469026ECF7E800E64F3C /* DiskStorageTests.swift */,
 				1F63107926EB1E5900BCF22B /* AsyncTaskQueueTests.swift */,
 				1F49EFF526EE080F0028C06F /* RuntimeTests.swift */,
+				1F87476626EF2E66008B3FC3 /* DispatchQueuePoolTests.swift */,
 				1F49EFFD26EE22B40028C06F /* TestHelpers.swift */,
 				1F659FA526DF2D8000ABA47A /* Info.plist */,
 			);
@@ -373,6 +376,7 @@
 				1F05469126ECF7E800E64F3C /* DiskStorageTests.swift in Sources */,
 				1F63107A26EB1E5900BCF22B /* AsyncTaskQueueTests.swift in Sources */,
 				1F63104126EAFED500BCF22B /* AsyncTests.swift in Sources */,
+				1F87476726EF2E66008B3FC3 /* DispatchQueuePoolTests.swift in Sources */,
 				1F63106426EB0F7000BCF22B /* AtomicVarTests.swift in Sources */,
 				1F49EFFE26EE22B40028C06F /* TestHelpers.swift in Sources */,
 			);
