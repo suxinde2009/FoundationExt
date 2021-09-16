@@ -41,6 +41,9 @@
 		1F659FBB26DF30F400ABA47A /* NSCharacterSetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F659FBA26DF30F400ABA47A /* NSCharacterSetExtensions.swift */; };
 		1F87476726EF2E66008B3FC3 /* DispatchQueuePoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87476626EF2E66008B3FC3 /* DispatchQueuePoolTests.swift */; };
 		1F87477826EF495B008B3FC3 /* AtomicInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87477726EF495B008B3FC3 /* AtomicInteger.swift */; };
+		1FE8733A26F0CBA600F0D4A8 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE8733926F0CBA600F0D4A8 /* Time.swift */; };
+		1FF72AE526F36F31007E8BC6 /* Delegated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF72AE426F36F31007E8BC6 /* Delegated.swift */; };
+		1FF72AE926F37087007E8BC6 /* DelegatedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF72AE826F37087007E8BC6 /* DelegatedTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,9 @@
 		1F659FBA26DF30F400ABA47A /* NSCharacterSetExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCharacterSetExtensions.swift; sourceTree = "<group>"; };
 		1F87476626EF2E66008B3FC3 /* DispatchQueuePoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueuePoolTests.swift; sourceTree = "<group>"; };
 		1F87477726EF495B008B3FC3 /* AtomicInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicInteger.swift; sourceTree = "<group>"; };
+		1FE8733926F0CBA600F0D4A8 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		1FF72AE426F36F31007E8BC6 /* Delegated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegated.swift; sourceTree = "<group>"; };
+		1FF72AE826F37087007E8BC6 /* DelegatedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegatedTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,9 +138,10 @@
 				1F05466226ECEA5B00E64F3C /* Box.swift */,
 				1F05466626ECEA7700E64F3C /* Result.swift */,
 				1F05466A26ECEB1A00E64F3C /* Delegate.swift */,
+				1FF72AE426F36F31007E8BC6 /* Delegated.swift */,
 				1F05467226ECEE6300E64F3C /* String+MD5.swift */,
 				1F05467E26ECF51700E64F3C /* RetryStrategy.swift */,
-				1F659F9826DF2D7F00ABA47A /* FoundationExt.h */,
+				1FE8733926F0CBA600F0D4A8 /* Time.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -205,6 +212,7 @@
 		1F659F9726DF2D7F00ABA47A /* FoundationExt */ = {
 			isa = PBXGroup;
 			children = (
+				1F659F9826DF2D7F00ABA47A /* FoundationExt.h */,
 				1F63107F26EB23EB00BCF22B /* Cache */,
 				1F63107026EB1BC100BCF22B /* Math */,
 				1F63106F26EB1B7900BCF22B /* Net */,
@@ -228,6 +236,7 @@
 				1F05469026ECF7E800E64F3C /* DiskStorageTests.swift */,
 				1F63107926EB1E5900BCF22B /* AsyncTaskQueueTests.swift */,
 				1F49EFF526EE080F0028C06F /* RuntimeTests.swift */,
+				1FF72AE826F37087007E8BC6 /* DelegatedTests.swift */,
 				1F87476626EF2E66008B3FC3 /* DispatchQueuePoolTests.swift */,
 				1F49EFFD26EE22B40028C06F /* TestHelpers.swift */,
 				1F659FA526DF2D8000ABA47A /* Info.plist */,
@@ -353,9 +362,11 @@
 				1F05465F26ECE9B200E64F3C /* Runtime.swift in Sources */,
 				1F05466B26ECEB1A00E64F3C /* Delegate.swift in Sources */,
 				1F63106C26EB1B4200BCF22B /* AsyncTaskQueue.swift in Sources */,
+				1FF72AE526F36F31007E8BC6 /* Delegated.swift in Sources */,
 				1F05466326ECEA5B00E64F3C /* Box.swift in Sources */,
 				1F63107226EB1C9D00BCF22B /* DispathQueuePool.swift in Sources */,
 				1F05467F26ECF51700E64F3C /* RetryStrategy.swift in Sources */,
+				1FE8733A26F0CBA600F0D4A8 /* Time.swift in Sources */,
 				1F659FBB26DF30F400ABA47A /* NSCharacterSetExtensions.swift in Sources */,
 				1F05465B26ECE7A000E64F3C /* MemoryStorage.swift in Sources */,
 				1F87477826EF495B008B3FC3 /* AtomicInteger.swift in Sources */,
@@ -383,6 +394,7 @@
 				1F87476726EF2E66008B3FC3 /* DispatchQueuePoolTests.swift in Sources */,
 				1F63106426EB0F7000BCF22B /* AtomicVarTests.swift in Sources */,
 				1F49EFFE26EE22B40028C06F /* TestHelpers.swift in Sources */,
+				1FF72AE926F37087007E8BC6 /* DelegatedTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +468,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -513,6 +526,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -541,7 +555,6 @@
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -567,7 +580,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -586,7 +598,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyprayer.FoundationExtTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -605,7 +616,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyprayer.FoundationExtTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
