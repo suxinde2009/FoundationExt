@@ -41,6 +41,8 @@
 		1F659FBB26DF30F400ABA47A /* NSCharacterSetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F659FBA26DF30F400ABA47A /* NSCharacterSetExtensions.swift */; };
 		1F87476726EF2E66008B3FC3 /* DispatchQueuePoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87476626EF2E66008B3FC3 /* DispatchQueuePoolTests.swift */; };
 		1F87477826EF495B008B3FC3 /* AtomicInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87477726EF495B008B3FC3 /* AtomicInteger.swift */; };
+		1FD920F626F4A99B00C61804 /* SimpleMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD920F526F4A99B00C61804 /* SimpleMemoryCache.swift */; };
+		1FD920FC26F4B1F000C61804 /* SimpleMemoryCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD920FB26F4B1F000C61804 /* SimpleMemoryCacheTests.swift */; };
 		1FE8733A26F0CBA600F0D4A8 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE8733926F0CBA600F0D4A8 /* Time.swift */; };
 		1FF72AE526F36F31007E8BC6 /* Delegated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF72AE426F36F31007E8BC6 /* Delegated.swift */; };
 		1FF72AE926F37087007E8BC6 /* DelegatedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF72AE826F37087007E8BC6 /* DelegatedTests.swift */; };
@@ -94,6 +96,8 @@
 		1F659FBA26DF30F400ABA47A /* NSCharacterSetExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCharacterSetExtensions.swift; sourceTree = "<group>"; };
 		1F87476626EF2E66008B3FC3 /* DispatchQueuePoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueuePoolTests.swift; sourceTree = "<group>"; };
 		1F87477726EF495B008B3FC3 /* AtomicInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicInteger.swift; sourceTree = "<group>"; };
+		1FD920F526F4A99B00C61804 /* SimpleMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMemoryCache.swift; sourceTree = "<group>"; };
+		1FD920FB26F4B1F000C61804 /* SimpleMemoryCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMemoryCacheTests.swift; sourceTree = "<group>"; };
 		1FE8733926F0CBA600F0D4A8 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		1FF72AE426F36F31007E8BC6 /* Delegated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegated.swift; sourceTree = "<group>"; };
 		1FF72AE826F37087007E8BC6 /* DelegatedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegatedTests.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				1F05465326ECE6C200E64F3C /* Storage */,
+				1FD920F526F4A99B00C61804 /* SimpleMemoryCache.swift */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				1F49EFF526EE080F0028C06F /* RuntimeTests.swift */,
 				1FF72AE826F37087007E8BC6 /* DelegatedTests.swift */,
 				1F87476626EF2E66008B3FC3 /* DispatchQueuePoolTests.swift */,
+				1FD920FB26F4B1F000C61804 /* SimpleMemoryCacheTests.swift */,
 				1F49EFFD26EE22B40028C06F /* TestHelpers.swift */,
 				1F659FA526DF2D8000ABA47A /* Info.plist */,
 			);
@@ -356,6 +362,7 @@
 				1F659FB726DF300C00ABA47A /* BundleExtensions.swift in Sources */,
 				1F05467326ECEE6300E64F3C /* String+MD5.swift in Sources */,
 				1F05465026ECD62000E64F3C /* CallbackQueue.swift in Sources */,
+				1FD920F626F4A99B00C61804 /* SimpleMemoryCache.swift in Sources */,
 				1F63103326EAF2C500BCF22B /* Async.swift in Sources */,
 				1F63105E26EB0AD500BCF22B /* AtomicVar.swift in Sources */,
 				1F05466726ECEA7700E64F3C /* Result.swift in Sources */,
@@ -385,6 +392,7 @@
 				1F659FA426DF2D8000ABA47A /* FoundationExtTests.swift in Sources */,
 				1F05468326ECF70F00E64F3C /* MemoryStorageTests.swift in Sources */,
 				1F63103B26EAF98C00BCF22B /* FIFOThreadTests.swift in Sources */,
+				1FD920FC26F4B1F000C61804 /* SimpleMemoryCacheTests.swift in Sources */,
 				1F05467B26ECF3A400E64F3C /* StorageExpirationTests.swift in Sources */,
 				1F63104526EAFF2D00BCF22B /* AsyncGroupTests.swift in Sources */,
 				1F05467726ECF2ED00E64F3C /* String_MD5_Tests.swift in Sources */,
