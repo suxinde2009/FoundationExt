@@ -57,11 +57,10 @@ public class ThreadSafeArray<T: Hashable>: Collection {
     }
     
     private var array: [T]
-    fileprivate let concurrentQueue =
-        DispatchQueue(
-            label: "Com.BigNerdCoding.SafeArray",
-            attributes: .concurrent
-        )
+    fileprivate let concurrentQueue = DispatchQueue(
+        label: "com.skyprayer.FoundationExt.ThreadSafeArray.concurrentQueue",
+        attributes: .concurrent    
+    )
     
     /// Construct function, create an `ThreadSafeArray` instance with an specified `Array` and return the instance.
     /// - Parameter array: the specified `Array`
@@ -442,8 +441,10 @@ public extension ThreadSafeArray where T: Equatable {
 class ThreadSafeDictionary<V: Hashable,T>: Collection {
 
     private var dictionary: [V: T]
-    private let concurrentQueue = DispatchQueue(label: "Dictionary Barrier Queue",
-                                                attributes: .concurrent)
+    private let concurrentQueue = DispatchQueue(
+        label: "com.skyprayer.FoundationExt.ThreadSafeDictionary.concurrentQueue",
+        attributes: .concurrent
+    )
     
     /// The position of the first element in a nonempty dictionary.
     ///
