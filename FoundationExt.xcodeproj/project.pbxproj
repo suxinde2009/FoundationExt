@@ -23,6 +23,8 @@
 		1F05469126ECF7E800E64F3C /* DiskStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05469026ECF7E800E64F3C /* DiskStorageTests.swift */; };
 		1F49EFF626EE080F0028C06F /* RuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49EFF526EE080F0028C06F /* RuntimeTests.swift */; };
 		1F49EFFE26EE22B40028C06F /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49EFFD26EE22B40028C06F /* TestHelpers.swift */; };
+		1F61840F26F5789500259E31 /* ThreadSafeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F61840E26F5789500259E31 /* ThreadSafeCollection.swift */; };
+		1F61841526F58AFF00259E31 /* ThreadSafeCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F61841426F58AFF00259E31 /* ThreadSafeCollectionTests.swift */; };
 		1F63103326EAF2C500BCF22B /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63103226EAF2C500BCF22B /* Async.swift */; };
 		1F63103726EAF85900BCF22B /* FIFOThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63103626EAF85900BCF22B /* FIFOThread.swift */; };
 		1F63103B26EAF98C00BCF22B /* FIFOThreadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63103A26EAF98C00BCF22B /* FIFOThreadTests.swift */; };
@@ -75,6 +77,8 @@
 		1F05469026ECF7E800E64F3C /* DiskStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorageTests.swift; sourceTree = "<group>"; };
 		1F49EFF526EE080F0028C06F /* RuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeTests.swift; sourceTree = "<group>"; };
 		1F49EFFD26EE22B40028C06F /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		1F61840E26F5789500259E31 /* ThreadSafeCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeCollection.swift; sourceTree = "<group>"; };
+		1F61841426F58AFF00259E31 /* ThreadSafeCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeCollectionTests.swift; sourceTree = "<group>"; };
 		1F63103226EAF2C500BCF22B /* Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		1F63103626EAF85900BCF22B /* FIFOThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIFOThread.swift; sourceTree = "<group>"; };
 		1F63103A26EAF98C00BCF22B /* FIFOThreadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIFOThreadTests.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				1F05467226ECEE6300E64F3C /* String+MD5.swift */,
 				1F05467E26ECF51700E64F3C /* RetryStrategy.swift */,
 				1FE8733926F0CBA600F0D4A8 /* Time.swift */,
+				1F61840E26F5789500259E31 /* ThreadSafeCollection.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				1FF72AE826F37087007E8BC6 /* DelegatedTests.swift */,
 				1F87476626EF2E66008B3FC3 /* DispatchQueuePoolTests.swift */,
 				1FD920FB26F4B1F000C61804 /* SimpleMemoryCacheTests.swift */,
+				1F61841426F58AFF00259E31 /* ThreadSafeCollectionTests.swift */,
 				1F49EFFD26EE22B40028C06F /* TestHelpers.swift */,
 				1F659FA526DF2D8000ABA47A /* Info.plist */,
 			);
@@ -381,6 +387,7 @@
 				1F63106826EB1B3100BCF22B /* AsyncOperation.swift in Sources */,
 				1F63103726EAF85900BCF22B /* FIFOThread.swift in Sources */,
 				1F05465526ECE6E500E64F3C /* Storage.swift in Sources */,
+				1F61840F26F5789500259E31 /* ThreadSafeCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F61841526F58AFF00259E31 /* ThreadSafeCollectionTests.swift in Sources */,
 				1F49EFF626EE080F0028C06F /* RuntimeTests.swift in Sources */,
 				1F659FA426DF2D8000ABA47A /* FoundationExtTests.swift in Sources */,
 				1F05468326ECF70F00E64F3C /* MemoryStorageTests.swift in Sources */,

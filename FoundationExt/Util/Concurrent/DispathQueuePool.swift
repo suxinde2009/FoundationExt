@@ -103,4 +103,10 @@ extension DispatchQueuePool {
     public func async(work: @escaping () -> Void) {
         queue.async(execute: work)
     }
+    
+    /// Run specificed work on the current available queue of current `DispatchQueuePool` instance synchronously.
+    /// - Parameter work: the work specificed
+    public func sync(work: @escaping () -> Void) {
+        queue.sync(execute: work)
+    }
 }
