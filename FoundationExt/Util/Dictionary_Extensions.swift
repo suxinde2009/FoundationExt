@@ -33,7 +33,10 @@ public extension Dictionary {
         guard JSONSerialization.isValidJSONObject(self) else {
             return nil
         }
-        let options = (prettify == true) ? JSONSerialization.WritingOptions.prettyPrinted : JSONSerialization.WritingOptions()
+        let options = (prettify == true) ?
+            JSONSerialization.WritingOptions.prettyPrinted :
+            JSONSerialization.WritingOptions()
+        
         return try? JSONSerialization.data(withJSONObject: self, options: options)
     }
     
@@ -43,7 +46,11 @@ public extension Dictionary {
     /// - Returns: Returns the generated JSON `String` instance.
     func toJson(prettify: Bool = false) -> String? {
         guard JSONSerialization.isValidJSONObject(self) else { return nil }
-        let options = (prettify == true) ? JSONSerialization.WritingOptions.prettyPrinted : JSONSerialization.WritingOptions()
+        
+        let options = (prettify == true) ?
+            JSONSerialization.WritingOptions.prettyPrinted :
+            JSONSerialization.WritingOptions()
+        
         guard let jsonData = try? JSONSerialization.data(withJSONObject: self, options: options) else { return nil }
         return String(data: jsonData, encoding: .utf8)
     }
