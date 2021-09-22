@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F01C37726FB4A6C00347660 /* Data_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01C37626FB4A6C00347660 /* Data_Extensions.swift */; };
+		1F01C38126FB4AA700347660 /* CGFloat_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01C38026FB4AA700347660 /* CGFloat_Extensions.swift */; };
+		1F01C38526FB4D4900347660 /* Dictionary_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01C38426FB4D4900347660 /* Dictionary_Extensions.swift */; };
 		1F05465026ECD62000E64F3C /* CallbackQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05464F26ECD62000E64F3C /* CallbackQueue.swift */; };
 		1F05465526ECE6E500E64F3C /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05465426ECE6E500E64F3C /* Storage.swift */; };
 		1F05465B26ECE7A000E64F3C /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05465A26ECE7A000E64F3C /* MemoryStorage.swift */; };
@@ -15,7 +18,7 @@
 		1F05466726ECEA7700E64F3C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05466626ECEA7700E64F3C /* Result.swift */; };
 		1F05466B26ECEB1A00E64F3C /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05466A26ECEB1A00E64F3C /* Delegate.swift */; };
 		1F05466F26ECEBA200E64F3C /* DiskStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05466E26ECEBA200E64F3C /* DiskStorage.swift */; };
-		1F05467326ECEE6300E64F3C /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05467226ECEE6300E64F3C /* String+MD5.swift */; };
+		1F05467326ECEE6300E64F3C /* String_MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05467226ECEE6300E64F3C /* String_MD5.swift */; };
 		1F05467726ECF2ED00E64F3C /* String_MD5_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05467626ECF2ED00E64F3C /* String_MD5_Tests.swift */; };
 		1F05467B26ECF3A400E64F3C /* StorageExpirationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05467A26ECF3A400E64F3C /* StorageExpirationTests.swift */; };
 		1F05467F26ECF51700E64F3C /* RetryStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05467E26ECF51700E64F3C /* RetryStrategy.swift */; };
@@ -61,6 +64,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F01C37626FB4A6C00347660 /* Data_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data_Extensions.swift; sourceTree = "<group>"; };
+		1F01C38026FB4AA700347660 /* CGFloat_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat_Extensions.swift; sourceTree = "<group>"; };
+		1F01C38426FB4D4900347660 /* Dictionary_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary_Extensions.swift; sourceTree = "<group>"; };
 		1F05464F26ECD62000E64F3C /* CallbackQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackQueue.swift; sourceTree = "<group>"; };
 		1F05465426ECE6E500E64F3C /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		1F05465A26ECE7A000E64F3C /* MemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
@@ -69,7 +75,7 @@
 		1F05466626ECEA7700E64F3C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		1F05466A26ECEB1A00E64F3C /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 		1F05466E26ECEBA200E64F3C /* DiskStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorage.swift; sourceTree = "<group>"; };
-		1F05467226ECEE6300E64F3C /* String+MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
+		1F05467226ECEE6300E64F3C /* String_MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_MD5.swift; sourceTree = "<group>"; };
 		1F05467626ECF2ED00E64F3C /* String_MD5_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_MD5_Tests.swift; sourceTree = "<group>"; };
 		1F05467A26ECF3A400E64F3C /* StorageExpirationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageExpirationTests.swift; sourceTree = "<group>"; };
 		1F05467E26ECF51700E64F3C /* RetryStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryStrategy.swift; sourceTree = "<group>"; };
@@ -147,10 +153,13 @@
 				1F05466626ECEA7700E64F3C /* Result.swift */,
 				1F05466A26ECEB1A00E64F3C /* Delegate.swift */,
 				1FF72AE426F36F31007E8BC6 /* Delegated.swift */,
-				1F05467226ECEE6300E64F3C /* String+MD5.swift */,
+				1F05467226ECEE6300E64F3C /* String_MD5.swift */,
 				1F05467E26ECF51700E64F3C /* RetryStrategy.swift */,
 				1FE8733926F0CBA600F0D4A8 /* Time.swift */,
 				1F61840E26F5789500259E31 /* ThreadSafeCollection.swift */,
+				1F01C37626FB4A6C00347660 /* Data_Extensions.swift */,
+				1F01C38426FB4D4900347660 /* Dictionary_Extensions.swift */,
+				1F01C38026FB4AA700347660 /* CGFloat_Extensions.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -365,8 +374,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F01C38126FB4AA700347660 /* CGFloat_Extensions.swift in Sources */,
 				1F659FB726DF300C00ABA47A /* BundleExtensions.swift in Sources */,
-				1F05467326ECEE6300E64F3C /* String+MD5.swift in Sources */,
+				1F01C37726FB4A6C00347660 /* Data_Extensions.swift in Sources */,
+				1F05467326ECEE6300E64F3C /* String_MD5.swift in Sources */,
 				1F05465026ECD62000E64F3C /* CallbackQueue.swift in Sources */,
 				1FD920F626F4A99B00C61804 /* SimpleMemoryCache.swift in Sources */,
 				1F63103326EAF2C500BCF22B /* Async.swift in Sources */,
@@ -374,6 +385,7 @@
 				1F05466726ECEA7700E64F3C /* Result.swift in Sources */,
 				1F05465F26ECE9B200E64F3C /* Runtime.swift in Sources */,
 				1F05466B26ECEB1A00E64F3C /* Delegate.swift in Sources */,
+				1F01C38526FB4D4900347660 /* Dictionary_Extensions.swift in Sources */,
 				1F63106C26EB1B4200BCF22B /* AsyncTaskQueue.swift in Sources */,
 				1FF72AE526F36F31007E8BC6 /* Delegated.swift in Sources */,
 				1F05466326ECEA5B00E64F3C /* Box.swift in Sources */,
