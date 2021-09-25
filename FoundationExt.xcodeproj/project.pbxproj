@@ -75,6 +75,12 @@
 		1FFF598A26FF5616006B3F3B /* Operators_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF598026FF5616006B3F3B /* Operators_Tests.swift */; };
 		1FFF598B26FF5616006B3F3B /* NSMutableAttributedString_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF598126FF5616006B3F3B /* NSMutableAttributedString_Tests.swift */; };
 		1FFF59C426FF6277006B3F3B /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF59C326FF6277006B3F3B /* Array+Extensions.swift */; };
+		1FFF59C926FF631F006B3F3B /* BitSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF59C826FF631F006B3F3B /* BitSet.swift */; };
+		1FFF59CD26FF635B006B3F3B /* Deque.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF59CC26FF635B006B3F3B /* Deque.swift */; };
+		1FFF59D126FF6383006B3F3B /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF59D026FF6383006B3F3B /* LinkedList.swift */; };
+		1FFF59D526FF63B2006B3F3B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF59D426FF63B2006B3F3B /* Queue.swift */; };
+		1FFF59D926FF63C7006B3F3B /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF59D826FF63C7006B3F3B /* Stack.swift */; };
+		1FFF59DD26FF63E1006B3F3B /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF59DC26FF63E1006B3F3B /* Tree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +165,12 @@
 		1FFF598026FF5616006B3F3B /* Operators_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators_Tests.swift; sourceTree = "<group>"; };
 		1FFF598126FF5616006B3F3B /* NSMutableAttributedString_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString_Tests.swift; sourceTree = "<group>"; };
 		1FFF59C326FF6277006B3F3B /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		1FFF59C826FF631F006B3F3B /* BitSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitSet.swift; sourceTree = "<group>"; };
+		1FFF59CC26FF635B006B3F3B /* Deque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deque.swift; sourceTree = "<group>"; };
+		1FFF59D026FF6383006B3F3B /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		1FFF59D426FF63B2006B3F3B /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		1FFF59D826FF63C7006B3F3B /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		1FFF59DC26FF63E1006B3F3B /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +377,12 @@
 		1FFF59C726FF6288006B3F3B /* BasicDataStructures */ = {
 			isa = PBXGroup;
 			children = (
+				1FFF59C826FF631F006B3F3B /* BitSet.swift */,
+				1FFF59CC26FF635B006B3F3B /* Deque.swift */,
+				1FFF59D026FF6383006B3F3B /* LinkedList.swift */,
+				1FFF59D426FF63B2006B3F3B /* Queue.swift */,
+				1FFF59D826FF63C7006B3F3B /* Stack.swift */,
+				1FFF59DC26FF63E1006B3F3B /* Tree.swift */,
 			);
 			path = BasicDataStructures;
 			sourceTree = "<group>";
@@ -479,19 +497,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F01C38126FB4AA700347660 /* AbsoluteValueProtocol.swift in Sources */,
+				1FFF59D926FF63C7006B3F3B /* Stack.swift in Sources */,
 				1F659FB726DF300C00ABA47A /* BundleExtensions.swift in Sources */,
 				1F01C37726FB4A6C00347660 /* Data_Extensions.swift in Sources */,
+				1FFF59D526FF63B2006B3F3B /* Queue.swift in Sources */,
 				1F05467326ECEE6300E64F3C /* String_MD5.swift in Sources */,
 				1FFF597026FF555C006B3F3B /* WritingDirection.swift in Sources */,
 				1FFF596F26FF555C006B3F3B /* VerticalGlyphForm.swift in Sources */,
 				1F05465026ECD62000E64F3C /* CallbackQueue.swift in Sources */,
 				1FFF596E26FF555C006B3F3B /* String+SwiftyAttributes.swift in Sources */,
+				1FFF59CD26FF635B006B3F3B /* Deque.swift in Sources */,
 				1FD920F626F4A99B00C61804 /* SimpleMemoryCache.swift in Sources */,
 				1F63103326EAF2C500BCF22B /* Async.swift in Sources */,
 				1F63105E26EB0AD500BCF22B /* AtomicVar.swift in Sources */,
 				1FFF59C426FF6277006B3F3B /* Array+Extensions.swift in Sources */,
 				1FFF597226FF555C006B3F3B /* Operators.swift in Sources */,
 				1F05466726ECEA7700E64F3C /* Result.swift in Sources */,
+				1FFF59DD26FF63E1006B3F3B /* Tree.swift in Sources */,
 				1F05465F26ECE9B200E64F3C /* Runtime.swift in Sources */,
 				1FFF596C26FF555C006B3F3B /* NSMutableAttributedString+SwiftyAttributes.swift in Sources */,
 				1FFF596B26FF555C006B3F3B /* NSString+SwiftyAttributes.swift in Sources */,
@@ -510,9 +532,11 @@
 				1F659FBB26DF30F400ABA47A /* NSCharacterSetExtensions.swift in Sources */,
 				1F05465B26ECE7A000E64F3C /* MemoryStorage.swift in Sources */,
 				1F87477826EF495B008B3FC3 /* AtomicInteger.swift in Sources */,
+				1FFF59C926FF631F006B3F3B /* BitSet.swift in Sources */,
 				1F05466F26ECEBA200E64F3C /* DiskStorage.swift in Sources */,
 				1FFF597126FF555C006B3F3B /* Attribute.swift in Sources */,
 				1F63106826EB1B3100BCF22B /* AsyncOperation.swift in Sources */,
+				1FFF59D126FF6383006B3F3B /* LinkedList.swift in Sources */,
 				1F63103726EAF85900BCF22B /* FIFOThread.swift in Sources */,
 				1F05465526ECE6E500E64F3C /* Storage.swift in Sources */,
 				1F61840F26F5789500259E31 /* ThreadSafeCollection.swift in Sources */,
