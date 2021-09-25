@@ -74,6 +74,7 @@
 		1FFF598926FF5616006B3F3B /* VerticalGlyphForm_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF597F26FF5616006B3F3B /* VerticalGlyphForm_Tests.swift */; };
 		1FFF598A26FF5616006B3F3B /* Operators_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF598026FF5616006B3F3B /* Operators_Tests.swift */; };
 		1FFF598B26FF5616006B3F3B /* NSMutableAttributedString_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF598126FF5616006B3F3B /* NSMutableAttributedString_Tests.swift */; };
+		1FFF59C426FF6277006B3F3B /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF59C326FF6277006B3F3B /* Array+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,7 @@
 		1FFF597F26FF5616006B3F3B /* VerticalGlyphForm_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalGlyphForm_Tests.swift; sourceTree = "<group>"; };
 		1FFF598026FF5616006B3F3B /* Operators_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators_Tests.swift; sourceTree = "<group>"; };
 		1FFF598126FF5616006B3F3B /* NSMutableAttributedString_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString_Tests.swift; sourceTree = "<group>"; };
+		1FFF59C326FF6277006B3F3B /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				1FE8733926F0CBA600F0D4A8 /* Time.swift */,
 				1F61840E26F5789500259E31 /* ThreadSafeCollection.swift */,
 				1F01C37626FB4A6C00347660 /* Data_Extensions.swift */,
+				1FFF59C326FF6277006B3F3B /* Array+Extensions.swift */,
 				1F01C38426FB4D4900347660 /* Dictionary_Extensions.swift */,
 				1F01C38026FB4AA700347660 /* AbsoluteValueProtocol.swift */,
 				1F01C38A26FB570300347660 /* Random.swift */,
@@ -280,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				1F659F9826DF2D7F00ABA47A /* FoundationExt.h */,
+				1FFF59C726FF6288006B3F3B /* BasicDataStructures */,
 				1F63107F26EB23EB00BCF22B /* Cache */,
 				1F63107026EB1BC100BCF22B /* Math */,
 				1F63106F26EB1B7900BCF22B /* Net */,
@@ -356,6 +360,13 @@
 				1FFF597E26FF5616006B3F3B /* WritingDirection_Tests.swift */,
 			);
 			path = AttributedString_Tests;
+			sourceTree = "<group>";
+		};
+		1FFF59C726FF6288006B3F3B /* BasicDataStructures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BasicDataStructures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,6 +489,7 @@
 				1FD920F626F4A99B00C61804 /* SimpleMemoryCache.swift in Sources */,
 				1F63103326EAF2C500BCF22B /* Async.swift in Sources */,
 				1F63105E26EB0AD500BCF22B /* AtomicVar.swift in Sources */,
+				1FFF59C426FF6277006B3F3B /* Array+Extensions.swift in Sources */,
 				1FFF597226FF555C006B3F3B /* Operators.swift in Sources */,
 				1F05466726ECEA7700E64F3C /* Result.swift in Sources */,
 				1F05465F26ECE9B200E64F3C /* Runtime.swift in Sources */,
