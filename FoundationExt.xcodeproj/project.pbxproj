@@ -49,6 +49,9 @@
 		1F87477826EF495B008B3FC3 /* AtomicInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87477726EF495B008B3FC3 /* AtomicInteger.swift */; };
 		1FD920F626F4A99B00C61804 /* SimpleMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD920F526F4A99B00C61804 /* SimpleMemoryCache.swift */; };
 		1FD920FC26F4B1F000C61804 /* SimpleMemoryCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD920FB26F4B1F000C61804 /* SimpleMemoryCacheTests.swift */; };
+		1FE7CA392700A19200CA59E2 /* Comparable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7CA382700A19200CA59E2 /* Comparable+Extensions.swift */; };
+		1FE7CA3D2700A20700CA59E2 /* CGRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7CA3C2700A20700CA59E2 /* CGRect+Extensions.swift */; };
+		1FE7CA412700A26100CA59E2 /* Parity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7CA402700A26100CA59E2 /* Parity.swift */; };
 		1FE8733A26F0CBA600F0D4A8 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE8733926F0CBA600F0D4A8 /* Time.swift */; };
 		1FF72AE526F36F31007E8BC6 /* Delegated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF72AE426F36F31007E8BC6 /* Delegated.swift */; };
 		1FF72AE926F37087007E8BC6 /* DelegatedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF72AE826F37087007E8BC6 /* DelegatedTests.swift */; };
@@ -144,6 +147,9 @@
 		1F87477726EF495B008B3FC3 /* AtomicInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicInteger.swift; sourceTree = "<group>"; };
 		1FD920F526F4A99B00C61804 /* SimpleMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMemoryCache.swift; sourceTree = "<group>"; };
 		1FD920FB26F4B1F000C61804 /* SimpleMemoryCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMemoryCacheTests.swift; sourceTree = "<group>"; };
+		1FE7CA382700A19200CA59E2 /* Comparable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+Extensions.swift"; sourceTree = "<group>"; };
+		1FE7CA3C2700A20700CA59E2 /* CGRect+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
+		1FE7CA402700A26100CA59E2 /* Parity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parity.swift; sourceTree = "<group>"; };
 		1FE8733926F0CBA600F0D4A8 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		1FF72AE426F36F31007E8BC6 /* Delegated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegated.swift; sourceTree = "<group>"; };
 		1FF72AE826F37087007E8BC6 /* DelegatedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegatedTests.swift; sourceTree = "<group>"; };
@@ -235,8 +241,11 @@
 				1FFF59E726FF6660006B3F3B /* DoubleValueProtocol.swift */,
 				1F01C38A26FB570300347660 /* Random.swift */,
 				1FFF59F126FF6AC0006B3F3B /* String+Extensions.swift */,
+				1FE7CA382700A19200CA59E2 /* Comparable+Extensions.swift */,
 				1FFF59F526FF6B19006B3F3B /* BinaryFloatingPoint+Extenstions.swift */,
 				1FFF59F926FF6B45006B3F3B /* BinaryInteger+Extensions.swift */,
+				1FE7CA3C2700A20700CA59E2 /* CGRect+Extensions.swift */,
+				1FE7CA402700A26100CA59E2 /* Parity.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -538,6 +547,7 @@
 				1FFF597226FF555C006B3F3B /* Operators.swift in Sources */,
 				1F05466726ECEA7700E64F3C /* Result.swift in Sources */,
 				1FFF59DD26FF63E1006B3F3B /* Tree.swift in Sources */,
+				1FE7CA3D2700A20700CA59E2 /* CGRect+Extensions.swift in Sources */,
 				1F05465F26ECE9B200E64F3C /* Runtime.swift in Sources */,
 				1FFF596C26FF555C006B3F3B /* NSMutableAttributedString+SwiftyAttributes.swift in Sources */,
 				1FFF596B26FF555C006B3F3B /* NSString+SwiftyAttributes.swift in Sources */,
@@ -550,11 +560,13 @@
 				1F05466326ECEA5B00E64F3C /* Box.swift in Sources */,
 				1F63107226EB1C9D00BCF22B /* DispathQueuePool.swift in Sources */,
 				1F05467F26ECF51700E64F3C /* RetryStrategy.swift in Sources */,
+				1FE7CA392700A19200CA59E2 /* Comparable+Extensions.swift in Sources */,
 				1FE8733A26F0CBA600F0D4A8 /* Time.swift in Sources */,
 				1FFF596A26FF555C006B3F3B /* Ligatures.swift in Sources */,
 				1FFF595626FF5215006B3F3B /* NSMutableAttributedString+Extensions.swift in Sources */,
 				1F659FBB26DF30F400ABA47A /* NSCharacterSetExtensions.swift in Sources */,
 				1F05465B26ECE7A000E64F3C /* MemoryStorage.swift in Sources */,
+				1FE7CA412700A26100CA59E2 /* Parity.swift in Sources */,
 				1F87477826EF495B008B3FC3 /* AtomicInteger.swift in Sources */,
 				1FFF59F226FF6AC0006B3F3B /* String+Extensions.swift in Sources */,
 				1FFF59C926FF631F006B3F3B /* BitSet.swift in Sources */,
