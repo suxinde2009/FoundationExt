@@ -52,6 +52,9 @@
 		1FE7CA392700A19200CA59E2 /* Comparable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7CA382700A19200CA59E2 /* Comparable+Extensions.swift */; };
 		1FE7CA3D2700A20700CA59E2 /* CGRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7CA3C2700A20700CA59E2 /* CGRect+Extensions.swift */; };
 		1FE7CA412700A26100CA59E2 /* Parity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7CA402700A26100CA59E2 /* Parity.swift */; };
+		1FE7CA452700A2B500CA59E2 /* BezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7CA442700A2B500CA59E2 /* BezierPath.swift */; };
+		1FE7CA492700A3E000CA59E2 /* Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7CA482700A3E000CA59E2 /* Lerp.swift */; };
+		1FE7CA4D2700A43600CA59E2 /* Degrad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7CA4C2700A43600CA59E2 /* Degrad.swift */; };
 		1FE8733A26F0CBA600F0D4A8 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE8733926F0CBA600F0D4A8 /* Time.swift */; };
 		1FF72AE526F36F31007E8BC6 /* Delegated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF72AE426F36F31007E8BC6 /* Delegated.swift */; };
 		1FF72AE926F37087007E8BC6 /* DelegatedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF72AE826F37087007E8BC6 /* DelegatedTests.swift */; };
@@ -150,6 +153,9 @@
 		1FE7CA382700A19200CA59E2 /* Comparable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+Extensions.swift"; sourceTree = "<group>"; };
 		1FE7CA3C2700A20700CA59E2 /* CGRect+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
 		1FE7CA402700A26100CA59E2 /* Parity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parity.swift; sourceTree = "<group>"; };
+		1FE7CA442700A2B500CA59E2 /* BezierPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BezierPath.swift; sourceTree = "<group>"; };
+		1FE7CA482700A3E000CA59E2 /* Lerp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lerp.swift; sourceTree = "<group>"; };
+		1FE7CA4C2700A43600CA59E2 /* Degrad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Degrad.swift; sourceTree = "<group>"; };
 		1FE8733926F0CBA600F0D4A8 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		1FF72AE426F36F31007E8BC6 /* Delegated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegated.swift; sourceTree = "<group>"; };
 		1FF72AE826F37087007E8BC6 /* DelegatedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegatedTests.swift; sourceTree = "<group>"; };
@@ -246,6 +252,7 @@
 				1FFF59F926FF6B45006B3F3B /* BinaryInteger+Extensions.swift */,
 				1FE7CA3C2700A20700CA59E2 /* CGRect+Extensions.swift */,
 				1FE7CA402700A26100CA59E2 /* Parity.swift */,
+				1FE7CA442700A2B500CA59E2 /* BezierPath.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -284,6 +291,8 @@
 		1F63107026EB1BC100BCF22B /* Math */ = {
 			isa = PBXGroup;
 			children = (
+				1FE7CA482700A3E000CA59E2 /* Lerp.swift */,
+				1FE7CA4C2700A43600CA59E2 /* Degrad.swift */,
 			);
 			path = Math;
 			sourceTree = "<group>";
@@ -545,6 +554,7 @@
 				1F63105E26EB0AD500BCF22B /* AtomicVar.swift in Sources */,
 				1FFF59C426FF6277006B3F3B /* Array+Extensions.swift in Sources */,
 				1FFF597226FF555C006B3F3B /* Operators.swift in Sources */,
+				1FE7CA4D2700A43600CA59E2 /* Degrad.swift in Sources */,
 				1F05466726ECEA7700E64F3C /* Result.swift in Sources */,
 				1FFF59DD26FF63E1006B3F3B /* Tree.swift in Sources */,
 				1FE7CA3D2700A20700CA59E2 /* CGRect+Extensions.swift in Sources */,
@@ -569,12 +579,14 @@
 				1FE7CA412700A26100CA59E2 /* Parity.swift in Sources */,
 				1F87477826EF495B008B3FC3 /* AtomicInteger.swift in Sources */,
 				1FFF59F226FF6AC0006B3F3B /* String+Extensions.swift in Sources */,
+				1FE7CA452700A2B500CA59E2 /* BezierPath.swift in Sources */,
 				1FFF59C926FF631F006B3F3B /* BitSet.swift in Sources */,
 				1FFF59E126FF64A0006B3F3B /* Date+Extensions.swift in Sources */,
 				1F05466F26ECEBA200E64F3C /* DiskStorage.swift in Sources */,
 				1FFF597126FF555C006B3F3B /* Attribute.swift in Sources */,
 				1F63106826EB1B3100BCF22B /* AsyncOperation.swift in Sources */,
 				1FFF59D126FF6383006B3F3B /* LinkedList.swift in Sources */,
+				1FE7CA492700A3E000CA59E2 /* Lerp.swift in Sources */,
 				1FFF59FA26FF6B45006B3F3B /* BinaryInteger+Extensions.swift in Sources */,
 				1F63103726EAF85900BCF22B /* FIFOThread.swift in Sources */,
 				1F05465526ECE6E500E64F3C /* Storage.swift in Sources */,
