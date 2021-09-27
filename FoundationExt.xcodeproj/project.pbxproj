@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F01C37726FB4A6C00347660 /* Data_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01C37626FB4A6C00347660 /* Data_Extensions.swift */; };
+		1F01C37726FB4A6C00347660 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01C37626FB4A6C00347660 /* Data+Extensions.swift */; };
 		1F01C38126FB4AA700347660 /* AbsoluteValueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01C38026FB4AA700347660 /* AbsoluteValueProtocol.swift */; };
 		1F01C38526FB4D4900347660 /* Dictionary_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01C38426FB4D4900347660 /* Dictionary_Extensions.swift */; };
 		1F01C38B26FB570300347660 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F01C38A26FB570300347660 /* Random.swift */; };
@@ -25,6 +25,9 @@
 		1F05467F26ECF51700E64F3C /* RetryStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05467E26ECF51700E64F3C /* RetryStrategy.swift */; };
 		1F05468326ECF70F00E64F3C /* MemoryStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05468226ECF70F00E64F3C /* MemoryStorageTests.swift */; };
 		1F05469126ECF7E800E64F3C /* DiskStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05469026ECF7E800E64F3C /* DiskStorageTests.swift */; };
+		1F0BD1A72701776200B1FA26 /* NSNumberableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BD1A62701776200B1FA26 /* NSNumberableProtocol.swift */; };
+		1F0BD1AF2701794D00B1FA26 /* Character+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BD1AE2701794D00B1FA26 /* Character+Extensions.swift */; };
+		1F0BD1B5270179E500B1FA26 /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BD1B4270179E500B1FA26 /* DispatchQueue+Extensions.swift */; };
 		1F49EFF626EE080F0028C06F /* RuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49EFF526EE080F0028C06F /* RuntimeTests.swift */; };
 		1F49EFFE26EE22B40028C06F /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49EFFD26EE22B40028C06F /* TestHelpers.swift */; };
 		1F61840F26F5789500259E31 /* ThreadSafeCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F61840E26F5789500259E31 /* ThreadSafeCollections.swift */; };
@@ -105,7 +108,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F01C37626FB4A6C00347660 /* Data_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data_Extensions.swift; sourceTree = "<group>"; };
+		1F01C37626FB4A6C00347660 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		1F01C38026FB4AA700347660 /* AbsoluteValueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsoluteValueProtocol.swift; sourceTree = "<group>"; };
 		1F01C38426FB4D4900347660 /* Dictionary_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary_Extensions.swift; sourceTree = "<group>"; };
 		1F01C38A26FB570300347660 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
@@ -123,6 +126,9 @@
 		1F05467E26ECF51700E64F3C /* RetryStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryStrategy.swift; sourceTree = "<group>"; };
 		1F05468226ECF70F00E64F3C /* MemoryStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorageTests.swift; sourceTree = "<group>"; };
 		1F05469026ECF7E800E64F3C /* DiskStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskStorageTests.swift; sourceTree = "<group>"; };
+		1F0BD1A62701776200B1FA26 /* NSNumberableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNumberableProtocol.swift; sourceTree = "<group>"; };
+		1F0BD1AE2701794D00B1FA26 /* Character+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Extensions.swift"; sourceTree = "<group>"; };
+		1F0BD1B4270179E500B1FA26 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
 		1F49EFF526EE080F0028C06F /* RuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeTests.swift; sourceTree = "<group>"; };
 		1F49EFFD26EE22B40028C06F /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		1F61840E26F5789500259E31 /* ThreadSafeCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeCollections.swift; sourceTree = "<group>"; };
@@ -239,7 +245,7 @@
 				1FF72AE426F36F31007E8BC6 /* Delegated.swift */,
 				1F05467226ECEE6300E64F3C /* String_MD5.swift */,
 				1F05467E26ECF51700E64F3C /* RetryStrategy.swift */,
-				1F01C37626FB4A6C00347660 /* Data_Extensions.swift */,
+				1F01C37626FB4A6C00347660 /* Data+Extensions.swift */,
 				1FFF59E026FF64A0006B3F3B /* Date+Extensions.swift */,
 				1FFF59C326FF6277006B3F3B /* Array+Extensions.swift */,
 				1F01C38426FB4D4900347660 /* Dictionary_Extensions.swift */,
@@ -253,6 +259,9 @@
 				1FE7CA3C2700A20700CA59E2 /* CGRect+Extensions.swift */,
 				1FE7CA402700A26100CA59E2 /* Parity.swift */,
 				1FE7CA442700A2B500CA59E2 /* BezierPath.swift */,
+				1F0BD1A62701776200B1FA26 /* NSNumberableProtocol.swift */,
+				1F0BD1AE2701794D00B1FA26 /* Character+Extensions.swift */,
+				1F0BD1B4270179E500B1FA26 /* DispatchQueue+Extensions.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -541,7 +550,7 @@
 				1FFF59D926FF63C7006B3F3B /* Stack.swift in Sources */,
 				1FFF59F626FF6B19006B3F3B /* BinaryFloatingPoint+Extenstions.swift in Sources */,
 				1F659FB726DF300C00ABA47A /* BundleExtensions.swift in Sources */,
-				1F01C37726FB4A6C00347660 /* Data_Extensions.swift in Sources */,
+				1F01C37726FB4A6C00347660 /* Data+Extensions.swift in Sources */,
 				1FFF59D526FF63B2006B3F3B /* Queue.swift in Sources */,
 				1F05467326ECEE6300E64F3C /* String_MD5.swift in Sources */,
 				1FFF597026FF555C006B3F3B /* WritingDirection.swift in Sources */,
@@ -550,6 +559,7 @@
 				1FFF596E26FF555C006B3F3B /* String+SwiftyAttributes.swift in Sources */,
 				1FFF59CD26FF635B006B3F3B /* Deque.swift in Sources */,
 				1FD920F626F4A99B00C61804 /* SimpleMemoryCache.swift in Sources */,
+				1F0BD1AF2701794D00B1FA26 /* Character+Extensions.swift in Sources */,
 				1F63103326EAF2C500BCF22B /* Async.swift in Sources */,
 				1F63105E26EB0AD500BCF22B /* AtomicVar.swift in Sources */,
 				1FFF59C426FF6277006B3F3B /* Array+Extensions.swift in Sources */,
@@ -569,6 +579,7 @@
 				1FF72AE526F36F31007E8BC6 /* Delegated.swift in Sources */,
 				1F05466326ECEA5B00E64F3C /* Box.swift in Sources */,
 				1F63107226EB1C9D00BCF22B /* DispathQueuePool.swift in Sources */,
+				1F0BD1B5270179E500B1FA26 /* DispatchQueue+Extensions.swift in Sources */,
 				1F05467F26ECF51700E64F3C /* RetryStrategy.swift in Sources */,
 				1FE7CA392700A19200CA59E2 /* Comparable+Extensions.swift in Sources */,
 				1FE8733A26F0CBA600F0D4A8 /* Time.swift in Sources */,
@@ -593,6 +604,7 @@
 				1F61840F26F5789500259E31 /* ThreadSafeCollections.swift in Sources */,
 				1F01C38B26FB570300347660 /* Random.swift in Sources */,
 				1FFF59E826FF6660006B3F3B /* DoubleValueProtocol.swift in Sources */,
+				1F0BD1A72701776200B1FA26 /* NSNumberableProtocol.swift in Sources */,
 				1FFF597426FF555C006B3F3B /* TextEffect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

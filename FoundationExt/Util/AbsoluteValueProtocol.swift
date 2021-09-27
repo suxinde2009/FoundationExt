@@ -59,8 +59,16 @@ extension Int: AbsoluteValueProtocol {
     }
 }
 
-extension CGFloat: AbsoluteValueProtocol {
+extension Float: AbsoluteValueProtocol {
+    public typealias T = Float
     
+    public var absoluteValue: Float {
+        return abs(self)
+    }
+    
+}
+
+extension CGFloat: AbsoluteValueProtocol {
     public typealias T = CGFloat
     
     public var absoluteValue: CGFloat {
@@ -70,7 +78,6 @@ extension CGFloat: AbsoluteValueProtocol {
 }
 
 extension Double: AbsoluteValueProtocol {
-    
     public typealias T = Double
     
     public var absoluteValue: Double {

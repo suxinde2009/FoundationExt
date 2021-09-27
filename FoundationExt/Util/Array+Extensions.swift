@@ -160,7 +160,8 @@ public extension Array {
 // MARK:- Search
 public extension Array {
     
-    func binarySearch(range: Range<Int>? = nil, where shouldBeResult: (Element) -> ComparisonResult) -> Int? {
+    func binarySearch(range: Range<Int>? = nil,
+                      where shouldBeResult: (Element) -> ComparisonResult) -> Int? {
         var lowerBound = 0
         var upperBound = count
         if let range = range {
@@ -181,7 +182,8 @@ public extension Array {
         return nil
     }
     
-    func binarySearch(range: ClosedRange<Int>, where shouldBeResult: (Element) -> ComparisonResult) -> Int? {
+    func binarySearch(range: ClosedRange<Int>,
+                      where shouldBeResult: (Element) -> ComparisonResult) -> Int? {
         return binarySearch(range: range.lowerBound..<(range.upperBound + 1), where: shouldBeResult)
     }
 }
