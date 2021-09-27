@@ -25,6 +25,14 @@ class LRUCacheTests: XCTestCase {
         cache.set("a", 1)
         assert(cache.get("c") == nil)
         assert(cache.get("a") == 1)
+        
+        cache["e"] = 3
+        assert(cache["e"] == 3)
+        
+        cache["a"] = nil
+        assert(cache["a"] == nil)
+        
+        
     }
     
 }

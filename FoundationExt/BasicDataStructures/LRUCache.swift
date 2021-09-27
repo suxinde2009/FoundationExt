@@ -37,6 +37,19 @@ public class LRUCache<KeyType: Hashable, ValueType> {
         
         insert(key, val)
     }
+    
+    public subscript(_ key: KeyType) -> ValueType? {
+        get {
+            return get(key)
+        }
+        set {
+            if let value = newValue {
+                set(key, value)
+            } else {
+                remove(key)
+            }
+        }
+    }
 }
 
 fileprivate extension LRUCache {
