@@ -13,7 +13,7 @@ public class LRUCache<KeyType: Hashable, ValueType> {
     private var cache: [KeyType: ValueType] = [:]
     private var priority: [KeyType] = []
     
-    public init(_ maxSize: Int) {
+    public init(_ maxSize: Int = 1000) {
         self.maxSize = maxSize
     }
     
