@@ -23,19 +23,19 @@ public class LRUCache<KeyType: Hashable, ValueType> {
         }
         
         remove(key)
-        insert(key, val: val)
+        insert(key, val)
         
         return val
     }
     
-    public func set(_ key: KeyType, val: ValueType) {
+    public func set(_ key: KeyType, _ val: ValueType) {
         if cache[key] != nil {
             remove(key)
         } else if priority.count >= maxSize, let keyToRemove = priority.last {
             remove(keyToRemove)
         }
         
-        insert(key, val: val)
+        insert(key, val)
     }
     
     private func remove(_ key: KeyType) {
@@ -45,7 +45,7 @@ public class LRUCache<KeyType: Hashable, ValueType> {
         }
     }
     
-    private func insert(_ key: KeyType, val: ValueType) {
+    private func insert(_ key: KeyType, _ val: ValueType) {
         cache[key] = val
         priority.insert(key, at: 0)
     }
