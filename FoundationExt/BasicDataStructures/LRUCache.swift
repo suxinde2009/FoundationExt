@@ -37,6 +37,9 @@ public class LRUCache<KeyType: Hashable, ValueType> {
         
         insert(key, val)
     }
+}
+
+fileprivate extension LRUCache {
     
     private func remove(_ key: KeyType) {
         cache.removeValue(forKey: key)
