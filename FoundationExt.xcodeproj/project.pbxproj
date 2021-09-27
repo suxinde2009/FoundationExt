@@ -59,6 +59,10 @@
 		1FE7CA492700A3E000CA59E2 /* Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7CA482700A3E000CA59E2 /* Lerp.swift */; };
 		1FE7CA4D2700A43600CA59E2 /* Degrad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7CA4C2700A43600CA59E2 /* Degrad.swift */; };
 		1FE8733A26F0CBA600F0D4A8 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE8733926F0CBA600F0D4A8 /* Time.swift */; };
+		1FEA07FB2701CB5B003DE0E4 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA07FA2701CB5B003DE0E4 /* PriorityQueue.swift */; };
+		1FEA07FF2701CB92003DE0E4 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA07FE2701CB92003DE0E4 /* Heap.swift */; };
+		1FEA08032701CBF5003DE0E4 /* LRUCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA08022701CBF5003DE0E4 /* LRUCache.swift */; };
+		1FEA08072701CD22003DE0E4 /* LRUCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA08062701CD22003DE0E4 /* LRUCacheTests.swift */; };
 		1FF72AE526F36F31007E8BC6 /* Delegated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF72AE426F36F31007E8BC6 /* Delegated.swift */; };
 		1FF72AE926F37087007E8BC6 /* DelegatedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF72AE826F37087007E8BC6 /* DelegatedTests.swift */; };
 		1FFF595626FF5215006B3F3B /* NSMutableAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF595526FF5215006B3F3B /* NSMutableAttributedString+Extensions.swift */; };
@@ -163,6 +167,10 @@
 		1FE7CA482700A3E000CA59E2 /* Lerp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lerp.swift; sourceTree = "<group>"; };
 		1FE7CA4C2700A43600CA59E2 /* Degrad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Degrad.swift; sourceTree = "<group>"; };
 		1FE8733926F0CBA600F0D4A8 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		1FEA07FA2701CB5B003DE0E4 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		1FEA07FE2701CB92003DE0E4 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
+		1FEA08022701CBF5003DE0E4 /* LRUCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUCache.swift; sourceTree = "<group>"; };
+		1FEA08062701CD22003DE0E4 /* LRUCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUCacheTests.swift; sourceTree = "<group>"; };
 		1FF72AE426F36F31007E8BC6 /* Delegated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegated.swift; sourceTree = "<group>"; };
 		1FF72AE826F37087007E8BC6 /* DelegatedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegatedTests.swift; sourceTree = "<group>"; };
 		1FFF595526FF5215006B3F3B /* NSMutableAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extensions.swift"; sourceTree = "<group>"; };
@@ -367,6 +375,7 @@
 				1FD920FB26F4B1F000C61804 /* SimpleMemoryCacheTests.swift */,
 				1F61841426F58AFF00259E31 /* ThreadSafeCollectionTests.swift */,
 				1F49EFFD26EE22B40028C06F /* TestHelpers.swift */,
+				1FEA08062701CD22003DE0E4 /* LRUCacheTests.swift */,
 				1F659FA526DF2D8000ABA47A /* Info.plist */,
 			);
 			path = FoundationExtTests;
@@ -425,6 +434,9 @@
 				1FFF59D426FF63B2006B3F3B /* Queue.swift */,
 				1FFF59D826FF63C7006B3F3B /* Stack.swift */,
 				1FFF59DC26FF63E1006B3F3B /* Tree.swift */,
+				1FEA07FA2701CB5B003DE0E4 /* PriorityQueue.swift */,
+				1FEA07FE2701CB92003DE0E4 /* Heap.swift */,
+				1FEA08022701CBF5003DE0E4 /* LRUCache.swift */,
 			);
 			path = BasicDataStructures;
 			sourceTree = "<group>";
@@ -585,6 +597,7 @@
 				1FE8733A26F0CBA600F0D4A8 /* Time.swift in Sources */,
 				1FFF596A26FF555C006B3F3B /* Ligatures.swift in Sources */,
 				1FFF595626FF5215006B3F3B /* NSMutableAttributedString+Extensions.swift in Sources */,
+				1FEA08032701CBF5003DE0E4 /* LRUCache.swift in Sources */,
 				1F659FBB26DF30F400ABA47A /* NSCharacterSetExtensions.swift in Sources */,
 				1F05465B26ECE7A000E64F3C /* MemoryStorage.swift in Sources */,
 				1FE7CA412700A26100CA59E2 /* Parity.swift in Sources */,
@@ -600,6 +613,8 @@
 				1FE7CA492700A3E000CA59E2 /* Lerp.swift in Sources */,
 				1FFF59FA26FF6B45006B3F3B /* BinaryInteger+Extensions.swift in Sources */,
 				1F63103726EAF85900BCF22B /* FIFOThread.swift in Sources */,
+				1FEA07FB2701CB5B003DE0E4 /* PriorityQueue.swift in Sources */,
+				1FEA07FF2701CB92003DE0E4 /* Heap.swift in Sources */,
 				1F05465526ECE6E500E64F3C /* Storage.swift in Sources */,
 				1F61840F26F5789500259E31 /* ThreadSafeCollections.swift in Sources */,
 				1F01C38B26FB570300347660 /* Random.swift in Sources */,
@@ -620,6 +635,7 @@
 				1FFF598A26FF5616006B3F3B /* Operators_Tests.swift in Sources */,
 				1F05468326ECF70F00E64F3C /* MemoryStorageTests.swift in Sources */,
 				1F63103B26EAF98C00BCF22B /* FIFOThreadTests.swift in Sources */,
+				1FEA08072701CD22003DE0E4 /* LRUCacheTests.swift in Sources */,
 				1FD920FC26F4B1F000C61804 /* SimpleMemoryCacheTests.swift in Sources */,
 				1F05467B26ECF3A400E64F3C /* StorageExpirationTests.swift in Sources */,
 				1F63104526EAFF2D00BCF22B /* AsyncGroupTests.swift in Sources */,
