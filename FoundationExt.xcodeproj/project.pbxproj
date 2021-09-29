@@ -30,6 +30,7 @@
 		1F0BD1B5270179E500B1FA26 /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0BD1B4270179E500B1FA26 /* DispatchQueue+Extensions.swift */; };
 		1F49EFF626EE080F0028C06F /* RuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49EFF526EE080F0028C06F /* RuntimeTests.swift */; };
 		1F49EFFE26EE22B40028C06F /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49EFFD26EE22B40028C06F /* TestHelpers.swift */; };
+		1F52E14F27048F9900B956FE /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F52E14E27048F9900B956FE /* Array2D.swift */; };
 		1F61840F26F5789500259E31 /* ThreadSafeCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F61840E26F5789500259E31 /* ThreadSafeCollections.swift */; };
 		1F61841526F58AFF00259E31 /* ThreadSafeCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F61841426F58AFF00259E31 /* ThreadSafeCollectionTests.swift */; };
 		1F63103326EAF2C500BCF22B /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63103226EAF2C500BCF22B /* Async.swift */; };
@@ -135,6 +136,7 @@
 		1F0BD1B4270179E500B1FA26 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
 		1F49EFF526EE080F0028C06F /* RuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeTests.swift; sourceTree = "<group>"; };
 		1F49EFFD26EE22B40028C06F /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		1F52E14E27048F9900B956FE /* Array2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		1F61840E26F5789500259E31 /* ThreadSafeCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeCollections.swift; sourceTree = "<group>"; };
 		1F61841426F58AFF00259E31 /* ThreadSafeCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeCollectionTests.swift; sourceTree = "<group>"; };
 		1F63103226EAF2C500BCF22B /* Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				1F0BD1A62701776200B1FA26 /* NSNumberableProtocol.swift */,
 				1F0BD1AE2701794D00B1FA26 /* Character+Extensions.swift */,
 				1F0BD1B4270179E500B1FA26 /* DispatchQueue+Extensions.swift */,
+				1F52E14E27048F9900B956FE /* Array2D.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				1F05466B26ECEB1A00E64F3C /* Delegate.swift in Sources */,
 				1F01C38526FB4D4900347660 /* Dictionary_Extensions.swift in Sources */,
 				1FFF597326FF555C006B3F3B /* Attribute+Sequence.swift in Sources */,
+				1F52E14F27048F9900B956FE /* Array2D.swift in Sources */,
 				1F63106C26EB1B4200BCF22B /* AsyncTaskQueue.swift in Sources */,
 				1FF72AE526F36F31007E8BC6 /* Delegated.swift in Sources */,
 				1F05466326ECEA5B00E64F3C /* Box.swift in Sources */,

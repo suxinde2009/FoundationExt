@@ -32,6 +32,7 @@ class LRUCacheTests: XCTestCase {
         cache["a"] = nil
         assert(cache["a"] == nil)
         
+        NSLog("\(cache)")
         
     }
     
