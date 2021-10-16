@@ -64,6 +64,9 @@
 		1FEA07FF2701CB92003DE0E4 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA07FE2701CB92003DE0E4 /* Heap.swift */; };
 		1FEA08032701CBF5003DE0E4 /* LRUCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA08022701CBF5003DE0E4 /* LRUCache.swift */; };
 		1FEA08072701CD22003DE0E4 /* LRUCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEA08062701CD22003DE0E4 /* LRUCacheTests.swift */; };
+		1FF00C62271A847000AF823D /* ResuseQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF00C61271A847000AF823D /* ResuseQueue.swift */; };
+		1FF00C66271A861500AF823D /* Countable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF00C65271A861500AF823D /* Countable.swift */; };
+		1FF00C6A271A866D00AF823D /* CountableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF00C69271A866D00AF823D /* CountableTests.swift */; };
 		1FF72AE526F36F31007E8BC6 /* Delegated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF72AE426F36F31007E8BC6 /* Delegated.swift */; };
 		1FF72AE926F37087007E8BC6 /* DelegatedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF72AE826F37087007E8BC6 /* DelegatedTests.swift */; };
 		1FFF595626FF5215006B3F3B /* NSMutableAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF595526FF5215006B3F3B /* NSMutableAttributedString+Extensions.swift */; };
@@ -173,6 +176,9 @@
 		1FEA07FE2701CB92003DE0E4 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
 		1FEA08022701CBF5003DE0E4 /* LRUCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUCache.swift; sourceTree = "<group>"; };
 		1FEA08062701CD22003DE0E4 /* LRUCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUCacheTests.swift; sourceTree = "<group>"; };
+		1FF00C61271A847000AF823D /* ResuseQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResuseQueue.swift; sourceTree = "<group>"; };
+		1FF00C65271A861500AF823D /* Countable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countable.swift; sourceTree = "<group>"; };
+		1FF00C69271A866D00AF823D /* CountableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountableTests.swift; sourceTree = "<group>"; };
 		1FF72AE426F36F31007E8BC6 /* Delegated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegated.swift; sourceTree = "<group>"; };
 		1FF72AE826F37087007E8BC6 /* DelegatedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegatedTests.swift; sourceTree = "<group>"; };
 		1FFF595526FF5215006B3F3B /* NSMutableAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extensions.swift"; sourceTree = "<group>"; };
@@ -273,6 +279,8 @@
 				1F0BD1AE2701794D00B1FA26 /* Character+Extensions.swift */,
 				1F0BD1B4270179E500B1FA26 /* DispatchQueue+Extensions.swift */,
 				1F52E14E27048F9900B956FE /* Array2D.swift */,
+				1FF00C61271A847000AF823D /* ResuseQueue.swift */,
+				1FF00C65271A861500AF823D /* Countable.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -377,6 +385,7 @@
 				1F87476626EF2E66008B3FC3 /* DispatchQueuePoolTests.swift */,
 				1FD920FB26F4B1F000C61804 /* SimpleMemoryCacheTests.swift */,
 				1F61841426F58AFF00259E31 /* ThreadSafeCollectionTests.swift */,
+				1FF00C69271A866D00AF823D /* CountableTests.swift */,
 				1F49EFFD26EE22B40028C06F /* TestHelpers.swift */,
 				1FEA08062701CD22003DE0E4 /* LRUCacheTests.swift */,
 				1F659FA526DF2D8000ABA47A /* Info.plist */,
@@ -576,11 +585,13 @@
 				1FD920F626F4A99B00C61804 /* SimpleMemoryCache.swift in Sources */,
 				1F0BD1AF2701794D00B1FA26 /* Character+Extensions.swift in Sources */,
 				1F63103326EAF2C500BCF22B /* Async.swift in Sources */,
+				1FF00C66271A861500AF823D /* Countable.swift in Sources */,
 				1F63105E26EB0AD500BCF22B /* AtomicVar.swift in Sources */,
 				1FFF59C426FF6277006B3F3B /* Array+Extensions.swift in Sources */,
 				1FFF597226FF555C006B3F3B /* Operators.swift in Sources */,
 				1FE7CA4D2700A43600CA59E2 /* Degrad.swift in Sources */,
 				1F05466726ECEA7700E64F3C /* Result.swift in Sources */,
+				1FF00C62271A847000AF823D /* ResuseQueue.swift in Sources */,
 				1FFF59DD26FF63E1006B3F3B /* Tree.swift in Sources */,
 				1FE7CA3D2700A20700CA59E2 /* CGRect+Extensions.swift in Sources */,
 				1F05465F26ECE9B200E64F3C /* Runtime.swift in Sources */,
@@ -655,6 +666,7 @@
 				1FFF598626FF5616006B3F3B /* TextEffect_Tests.swift in Sources */,
 				1F63106426EB0F7000BCF22B /* AtomicVarTests.swift in Sources */,
 				1F49EFFE26EE22B40028C06F /* TestHelpers.swift in Sources */,
+				1FF00C6A271A866D00AF823D /* CountableTests.swift in Sources */,
 				1FFF598926FF5616006B3F3B /* VerticalGlyphForm_Tests.swift in Sources */,
 				1FF72AE926F37087007E8BC6 /* DelegatedTests.swift in Sources */,
 				1FFF598526FF5616006B3F3B /* NSAttributedString_Tests.swift in Sources */,
