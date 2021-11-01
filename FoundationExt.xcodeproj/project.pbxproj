@@ -31,8 +31,7 @@
 		1F49EFF626EE080F0028C06F /* RuntimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49EFF526EE080F0028C06F /* RuntimeTests.swift */; };
 		1F49EFFE26EE22B40028C06F /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F49EFFD26EE22B40028C06F /* TestHelpers.swift */; };
 		1F52E14F27048F9900B956FE /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F52E14E27048F9900B956FE /* Array2D.swift */; };
-		1F61840F26F5789500259E31 /* ThreadSafeCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F61840E26F5789500259E31 /* ThreadSafeCollections.swift */; };
-		1F61841526F58AFF00259E31 /* ThreadSafeCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F61841426F58AFF00259E31 /* ThreadSafeCollectionTests.swift */; };
+		1F61841526F58AFF00259E31 /* ConcurrentCollectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F61841426F58AFF00259E31 /* ConcurrentCollectionsTests.swift */; };
 		1F63103326EAF2C500BCF22B /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63103226EAF2C500BCF22B /* Async.swift */; };
 		1F63103726EAF85900BCF22B /* FIFOThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63103626EAF85900BCF22B /* FIFOThread.swift */; };
 		1F63103B26EAF98C00BCF22B /* FIFOThreadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63103A26EAF98C00BCF22B /* FIFOThreadTests.swift */; };
@@ -49,6 +48,7 @@
 		1F659FA626DF2D8000ABA47A /* FoundationExt.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F659F9826DF2D7F00ABA47A /* FoundationExt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F659FB726DF300C00ABA47A /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F659FB626DF300C00ABA47A /* BundleExtensions.swift */; };
 		1F659FBB26DF30F400ABA47A /* NSCharacterSetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F659FBA26DF30F400ABA47A /* NSCharacterSetExtensions.swift */; };
+		1F7771BF272FFDA30086A98C /* ConcurrentCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7771BE272FFDA30086A98C /* ConcurrentCollections.swift */; };
 		1F87476726EF2E66008B3FC3 /* DispatchQueuePoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87476626EF2E66008B3FC3 /* DispatchQueuePoolTests.swift */; };
 		1F87477826EF495B008B3FC3 /* AtomicInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87477726EF495B008B3FC3 /* AtomicInteger.swift */; };
 		1FD920F626F4A99B00C61804 /* SimpleMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD920F526F4A99B00C61804 /* SimpleMemoryCache.swift */; };
@@ -140,8 +140,7 @@
 		1F49EFF526EE080F0028C06F /* RuntimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeTests.swift; sourceTree = "<group>"; };
 		1F49EFFD26EE22B40028C06F /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		1F52E14E27048F9900B956FE /* Array2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
-		1F61840E26F5789500259E31 /* ThreadSafeCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeCollections.swift; sourceTree = "<group>"; };
-		1F61841426F58AFF00259E31 /* ThreadSafeCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeCollectionTests.swift; sourceTree = "<group>"; };
+		1F61841426F58AFF00259E31 /* ConcurrentCollectionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentCollectionsTests.swift; sourceTree = "<group>"; };
 		1F63103226EAF2C500BCF22B /* Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		1F63103626EAF85900BCF22B /* FIFOThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIFOThread.swift; sourceTree = "<group>"; };
 		1F63103A26EAF98C00BCF22B /* FIFOThreadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIFOThreadTests.swift; sourceTree = "<group>"; };
@@ -161,6 +160,7 @@
 		1F659FA526DF2D8000ABA47A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F659FB626DF300C00ABA47A /* BundleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtensions.swift; sourceTree = "<group>"; };
 		1F659FBA26DF30F400ABA47A /* NSCharacterSetExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCharacterSetExtensions.swift; sourceTree = "<group>"; };
+		1F7771BE272FFDA30086A98C /* ConcurrentCollections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentCollections.swift; sourceTree = "<group>"; };
 		1F87476626EF2E66008B3FC3 /* DispatchQueuePoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueuePoolTests.swift; sourceTree = "<group>"; };
 		1F87477726EF495B008B3FC3 /* AtomicInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicInteger.swift; sourceTree = "<group>"; };
 		1FD920F526F4A99B00C61804 /* SimpleMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMemoryCache.swift; sourceTree = "<group>"; };
@@ -288,7 +288,7 @@
 		1F63105B26EB0A9500BCF22B /* Concurrent */ = {
 			isa = PBXGroup;
 			children = (
-				1F61840E26F5789500259E31 /* ThreadSafeCollections.swift */,
+				1F7771BE272FFDA30086A98C /* ConcurrentCollections.swift */,
 				1F63107126EB1C9D00BCF22B /* DispathQueuePool.swift */,
 				1F63103226EAF2C500BCF22B /* Async.swift */,
 				1F63103626EAF85900BCF22B /* FIFOThread.swift */,
@@ -384,7 +384,7 @@
 				1FF72AE826F37087007E8BC6 /* DelegatedTests.swift */,
 				1F87476626EF2E66008B3FC3 /* DispatchQueuePoolTests.swift */,
 				1FD920FB26F4B1F000C61804 /* SimpleMemoryCacheTests.swift */,
-				1F61841426F58AFF00259E31 /* ThreadSafeCollectionTests.swift */,
+				1F61841426F58AFF00259E31 /* ConcurrentCollectionsTests.swift */,
 				1FF00C69271A866D00AF823D /* CountableTests.swift */,
 				1F49EFFD26EE22B40028C06F /* TestHelpers.swift */,
 				1FEA08062701CD22003DE0E4 /* LRUCacheTests.swift */,
@@ -571,6 +571,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F01C38126FB4AA700347660 /* AbsoluteValueProtocol.swift in Sources */,
+				1F7771BF272FFDA30086A98C /* ConcurrentCollections.swift in Sources */,
 				1FFF59D926FF63C7006B3F3B /* Stack.swift in Sources */,
 				1FFF59F626FF6B19006B3F3B /* BinaryFloatingPoint+Extenstions.swift in Sources */,
 				1F659FB726DF300C00ABA47A /* BundleExtensions.swift in Sources */,
@@ -631,7 +632,6 @@
 				1FEA07FB2701CB5B003DE0E4 /* PriorityQueue.swift in Sources */,
 				1FEA07FF2701CB92003DE0E4 /* Heap.swift in Sources */,
 				1F05465526ECE6E500E64F3C /* Storage.swift in Sources */,
-				1F61840F26F5789500259E31 /* ThreadSafeCollections.swift in Sources */,
 				1F01C38B26FB570300347660 /* Random.swift in Sources */,
 				1FFF59E826FF6660006B3F3B /* DoubleValueProtocol.swift in Sources */,
 				1F0BD1A72701776200B1FA26 /* NSNumberableProtocol.swift in Sources */,
@@ -643,7 +643,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F61841526F58AFF00259E31 /* ThreadSafeCollectionTests.swift in Sources */,
+				1F61841526F58AFF00259E31 /* ConcurrentCollectionsTests.swift in Sources */,
 				1FFF598826FF5616006B3F3B /* WritingDirection_Tests.swift in Sources */,
 				1F49EFF626EE080F0028C06F /* RuntimeTests.swift in Sources */,
 				1F659FA426DF2D8000ABA47A /* FoundationExtTests.swift in Sources */,

@@ -8,7 +8,7 @@
 import Foundation
 
 /// An thread safe array wrapper class.
-public class ThreadSafeArray<T: Hashable>: Collection {
+public class ConcurrentArray<T: Hashable>: Collection {
     
     /// Returns the position immediately after the given index.
     ///
@@ -23,7 +23,7 @@ public class ThreadSafeArray<T: Hashable>: Collection {
     
     /// The position of the first element in a nonempty array.
     ///
-    /// For an instance of `ThreadSafeArray`, `startIndex` is always zero. If the array
+    /// For an instance of `ConcurrentArray`, `startIndex` is always zero. If the array
     /// is empty, `startIndex` is equal to `endIndex`.
     public var startIndex: Int {
         get {
@@ -41,7 +41,7 @@ public class ThreadSafeArray<T: Hashable>: Collection {
     /// creates a range that doesn't include the upper bound, so it's always
     /// safe to use with `endIndex`. For example:
     ///
-    ///     let numbers = ThreadSafeArray<Int>([10, 20, 30, 40, 50])
+    ///     let numbers = ConcurrentArray<Int>([10, 20, 30, 40, 50])
     ///     if let i = numbers.firstIndex(of: 30) {
     ///         print(numbers[i ..< numbers.endIndex])
     ///     }
@@ -58,11 +58,11 @@ public class ThreadSafeArray<T: Hashable>: Collection {
     
     private var array: [T]
     fileprivate let concurrentQueue = DispatchQueue(
-        label: "com.skyprayer.FoundationExt.ThreadSafeArray.concurrentQueue",
-        attributes: .concurrent    
+        label: "com.skyprayer.FoundationExt.ConcurrentArray.concurrentQueue",
+        attributes: .concurrent
     )
     
-    /// Construct function, create an `ThreadSafeArray` instance with an specified `Array` and return the instance.
+    /// Construct function, create an `ConcurrentArray` instance with an specified `Array` and return the instance.
     /// - Parameter array: the specified `Array`
     init(_ array: [T] = []) {
         self.array = array
@@ -72,7 +72,7 @@ public class ThreadSafeArray<T: Hashable>: Collection {
     ///
     /// If the collection is empty, the value of this property is `nil`.
     ///
-    ///     let numbers = ThreadSafeArray<Int>([10, 20, 30, 40, 50])
+    ///     let numbers = ConcurrentArray<Int>([10, 20, 30, 40, 50])
     ///     if let firstNumber = numbers.first {
     ///         print(firstNumber)
     ///     }
@@ -87,7 +87,7 @@ public class ThreadSafeArray<T: Hashable>: Collection {
     ///
     /// If the collection is empty, the value of this property is `nil`.
     ///
-    ///     let numbers = ThreadSafeArray<Int>([10, 20, 30, 40, 50])
+    ///     let numbers = ConcurrentArray<Int>([10, 20, 30, 40, 50])
     ///     if let lastNumber = numbers.last {
     ///         print(lastNumber)
     ///     }
@@ -135,7 +135,7 @@ public class ThreadSafeArray<T: Hashable>: Collection {
     /// The following example uses the `first(where:)` method to find the first
     /// negative number in an array of integers:
     ///
-    ///     let numbers = ThreadSafeArray<Int>([3, 7, 4, -2, 9, -6, 10, 1])
+    ///     let numbers = ConcurrentArray<Int>([3, 7, 4, -2, 9, -6, 10, 1])
     ///     if let firstNegative = numbers.first(where: { $0 < 0 }) {
     ///         print("The first negative number is \(firstNegative).")
     ///     }
@@ -188,7 +188,7 @@ public class ThreadSafeArray<T: Hashable>: Collection {
     ///         case error(Int)
     ///     }
     ///
-    ///     let responses: ThreadSafeArray<HTTPResponse> = ThreadSafeArray<HTTPResponse>([.error(500), .ok, .ok, .error(404), .error(403)])
+    ///     let responses: ConcurrentArray<HTTPResponse> = ConcurrentArray<HTTPResponse>([.error(500), .ok, .ok, .error(404), .error(403)])
     ///     let sortedResponses = responses.sorted {
     ///         switch ($0, $1) {
     ///         // Order errors by code
@@ -211,7 +211,7 @@ public class ThreadSafeArray<T: Hashable>: Collection {
     /// descending order, pass the greater-than operator (`>`) as the
     /// `areInIncreasingOrder` parameter.
     ///
-    ///     let students = ThreadSafeArray<String>(["Kofi", "Abena", "Peter", "Kweku", "Akosua"])
+    ///     let students = ConcurrentArray<String>(["Kofi", "Abena", "Peter", "Kweku", "Akosua"])
     ///     let descendingStudents = students.sorted(by: >)
     ///     print(descendingStudents)
     ///     // Prints "["Peter", "Kweku", "Kofi", "Akosua", "Abena"]"
@@ -299,7 +299,7 @@ public class ThreadSafeArray<T: Hashable>: Collection {
     /// index. If you pass the array's `endIndex` property as the `index`
     /// parameter, the new element is appended to the array.
     ///
-    ///     var numbers = ThreadSafeArray<Int>([1, 2, 3, 4, 5])
+    ///     var numbers = ConcurrentArray<Int>([1, 2, 3, 4, 5])
     ///     numbers.insert(100, at: 3)
     ///     numbers.insert(200, at: numbers.endIndex)
     ///
@@ -383,31 +383,34 @@ public class ThreadSafeArray<T: Hashable>: Collection {
     }
     
     /// Append the right value to the left
-    static func +=(left: inout ThreadSafeArray, right: T) {
+    static func +=(left: inout ConcurrentArray, right: T) {
         left.append(right)
     }
     
     /// Append the right values to the left
-    static func +=(left: inout ThreadSafeArray, right: [T]) {
+    static func +=(left: inout ConcurrentArray, right: [T]) {
         left.append(right)
     }
     
     /// Append the right values to the left
-    static func +=(left: inout ThreadSafeArray, right: ThreadSafeArray) {
-        left += right.getInternalArray()
+    static func +=(left: inout ConcurrentArray, right: ConcurrentArray) {
+        left += right.getNonConcurrentArray()
     }
     
-    fileprivate func getInternalArray() -> [T] {
-        var internalArray: [T] = []
+    
+    /// Returns a new Array object containing all the objects within this ConcurrentArray.
+    /// - Returns: A new Array instance containing all the objects in this array.
+    public func getNonConcurrentArray() -> [T] {
+        var nonConcurrentArray: [T] = []
         concurrentQueue.sync {
-            internalArray = array
+            nonConcurrentArray = array
         }
-        return internalArray
+        return nonConcurrentArray
     }
     
 }
 
-public extension ThreadSafeArray where T: Equatable {
+public extension ConcurrentArray where T: Equatable {
     
     /// Returns a Boolean value indicating whether the sequence contains the
     /// given element.
@@ -415,7 +418,7 @@ public extension ThreadSafeArray where T: Equatable {
     /// This example checks to see whether a favorite actor is in an array
     /// storing a movie's cast.
     ///
-    ///     let cast = ThreadSafeArray<String>(["Vivien", "Marlon", "Kim", "Karl"])
+    ///     let cast = ConcurrentArray<String>(["Vivien", "Marlon", "Kim", "Karl"])
     ///     print(cast.contains("Marlon"))
     ///     // Prints "true"
     ///     print(cast.contains("James"))
@@ -438,11 +441,11 @@ public extension ThreadSafeArray where T: Equatable {
 
 
 /// A thread safe Dictionary wrapper class.
-class ThreadSafeDictionary<V: Hashable,T>: Collection {
-
-    private var dictionary: [V: T]
+class ConcurrentDictionary<K: Hashable,V>: Collection {
+    
+    private var dictionary: [K: V]
     private let concurrentQueue = DispatchQueue(
-        label: "com.skyprayer.FoundationExt.ThreadSafeDictionary.concurrentQueue",
+        label: "com.skyprayer.FoundationExt.ConcurrentDictionary.concurrentQueue",
         attributes: .concurrent
     )
     
@@ -453,7 +456,7 @@ class ThreadSafeDictionary<V: Hashable,T>: Collection {
     /// - Complexity: Amortized O(1) if the dictionary does not wrap a bridged
     ///   `NSDictionary`. If the dictionary wraps a bridged `NSDictionary`, the
     ///   performance is unspecified.
-    var startIndex: Dictionary<V, T>.Index {
+    var startIndex: Dictionary<K, V>.Index {
         self.concurrentQueue.sync {
             return self.dictionary.startIndex
         }
@@ -465,15 +468,15 @@ class ThreadSafeDictionary<V: Hashable,T>: Collection {
     ///
     /// - Complexity: Amortized O(1) if the dictionary does not wrap a bridged
     ///   `NSDictionary`; otherwise, the performance is unspecified.
-    var endIndex: Dictionary<V, T>.Index {
+    var endIndex: Dictionary<K, V>.Index {
         self.concurrentQueue.sync {
             return self.dictionary.endIndex
         }
     }
     
-    /// Construct function, create an `ThreadSafeDictionary` instance with an specified `Dictionary` and return the instance.
+    /// Construct function, create an `ConcurrentDictionary` instance with an specified `Dictionary` and return the instance.
     /// - Parameter dict: the specified `Dictionary`
-    init(dict: [V: T] = [V:T]()) {
+    init(dict: [K: V] = [K:V]()) {
         self.dictionary = dict
     }
     
@@ -486,13 +489,13 @@ class ThreadSafeDictionary<V: Hashable,T>: Collection {
     /// - Parameter i: A valid index of the collection. `i` must be less than
     ///   `endIndex`.
     /// - Returns: The index value immediately after `i`.
-    func index(after i: Dictionary<V, T>.Index) -> Dictionary<V, T>.Index {
+    func index(after i: Dictionary<K, V>.Index) -> Dictionary<K, V>.Index {
         self.concurrentQueue.sync {
             return self.dictionary.index(after: i)
         }
     }
     // swiftlint:enable identifier_name
-    subscript(key: V) -> T? {
+    subscript(key: K) -> V? {
         set(newValue) {
             self.concurrentQueue.async(flags: .barrier) {[weak self] in
                 self?.dictionary[key] = newValue
@@ -506,7 +509,7 @@ class ThreadSafeDictionary<V: Hashable,T>: Collection {
     }
     
     // has implicity get
-    subscript(index: Dictionary<V, T>.Index) -> Dictionary<V, T>.Element {
+    subscript(index: Dictionary<K, V>.Index) -> Dictionary<K, V>.Element {
         self.concurrentQueue.sync {
             return self.dictionary[index]
         }
@@ -518,7 +521,7 @@ class ThreadSafeDictionary<V: Hashable,T>: Collection {
     /// associated value. On removal, this method invalidates all indices with
     /// respect to the dictionary.
     ///
-    ///     var hues = ThreadSafeDictionary<String:Int>(dict:["Heliotrope": 296, "Coral": 16, "Aquamarine": 156])
+    ///     var hues = ConcurrentDictionary<String:Int>(dict:["Heliotrope": 296, "Coral": 16, "Aquamarine": 156])
     ///     if let value = hues.removeValue(forKey: "Coral") {
     ///         print("The value \(value) was removed.")
     ///     }
@@ -540,7 +543,7 @@ class ThreadSafeDictionary<V: Hashable,T>: Collection {
     ///
     /// - Complexity: O(*n*), where *n* is the number of key-value pairs in the
     ///   dictionary.
-    func removeValue(forKey key: V) {
+    func removeValue(forKey key: K) {
         self.concurrentQueue.async(flags: .barrier) {[weak self] in
             self?.dictionary.removeValue(forKey: key)
         }
@@ -564,6 +567,16 @@ class ThreadSafeDictionary<V: Hashable,T>: Collection {
         }
     }
     
+    
+    /// Returns a new Dictionary object containing all the objects within this ConcurrentDictionary.
+    /// - Returns: A new Dictionary instance containing all the objects in this dictionary.
+    public func getNonConcurrentDictionary() -> [K:V] {
+        var nonConcurrentDictionary: [K:V] = [:]
+        concurrentQueue.sync {
+            nonConcurrentDictionary = dictionary
+        }
+        return nonConcurrentDictionary
+    }
 }
 
 
