@@ -53,6 +53,8 @@
 		1F87477826EF495B008B3FC3 /* AtomicInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F87477726EF495B008B3FC3 /* AtomicInteger.swift */; };
 		1FD920F626F4A99B00C61804 /* SimpleMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD920F526F4A99B00C61804 /* SimpleMemoryCache.swift */; };
 		1FD920FC26F4B1F000C61804 /* SimpleMemoryCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD920FB26F4B1F000C61804 /* SimpleMemoryCacheTests.swift */; };
+		1FE35EB8274CED0E008E1715 /* GCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE35EB7274CED0E008E1715 /* GCDTimer.swift */; };
+		1FE35EBC274CF419008E1715 /* GCDTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE35EBB274CF419008E1715 /* GCDTimerTests.swift */; };
 		1FE7CA392700A19200CA59E2 /* Comparable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7CA382700A19200CA59E2 /* Comparable+Extensions.swift */; };
 		1FE7CA3D2700A20700CA59E2 /* CGRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7CA3C2700A20700CA59E2 /* CGRect+Extensions.swift */; };
 		1FE7CA412700A26100CA59E2 /* Parity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7CA402700A26100CA59E2 /* Parity.swift */; };
@@ -165,6 +167,8 @@
 		1F87477726EF495B008B3FC3 /* AtomicInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicInteger.swift; sourceTree = "<group>"; };
 		1FD920F526F4A99B00C61804 /* SimpleMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMemoryCache.swift; sourceTree = "<group>"; };
 		1FD920FB26F4B1F000C61804 /* SimpleMemoryCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMemoryCacheTests.swift; sourceTree = "<group>"; };
+		1FE35EB7274CED0E008E1715 /* GCDTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDTimer.swift; sourceTree = "<group>"; };
+		1FE35EBB274CF419008E1715 /* GCDTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDTimerTests.swift; sourceTree = "<group>"; };
 		1FE7CA382700A19200CA59E2 /* Comparable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+Extensions.swift"; sourceTree = "<group>"; };
 		1FE7CA3C2700A20700CA59E2 /* CGRect+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
 		1FE7CA402700A26100CA59E2 /* Parity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parity.swift; sourceTree = "<group>"; };
@@ -296,6 +300,7 @@
 				1F63106B26EB1B4200BCF22B /* AsyncTaskQueue.swift */,
 				1F05464F26ECD62000E64F3C /* CallbackQueue.swift */,
 				1F63105C26EB0AAC00BCF22B /* Atomic */,
+				1FE35EB7274CED0E008E1715 /* GCDTimer.swift */,
 			);
 			path = Concurrent;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 				1F63104426EAFF2D00BCF22B /* AsyncGroupTests.swift */,
 				1F63106326EB0F7000BCF22B /* AtomicVarTests.swift */,
 				1F05467626ECF2ED00E64F3C /* String_MD5_Tests.swift */,
+				1FE35EBB274CF419008E1715 /* GCDTimerTests.swift */,
 				1F05467A26ECF3A400E64F3C /* StorageExpirationTests.swift */,
 				1F05468226ECF70F00E64F3C /* MemoryStorageTests.swift */,
 				1F05469026ECF7E800E64F3C /* DiskStorageTests.swift */,
@@ -571,6 +577,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F01C38126FB4AA700347660 /* AbsoluteValueProtocol.swift in Sources */,
+				1FE35EB8274CED0E008E1715 /* GCDTimer.swift in Sources */,
 				1F7771BF272FFDA30086A98C /* ConcurrentCollections.swift in Sources */,
 				1FFF59D926FF63C7006B3F3B /* Stack.swift in Sources */,
 				1FFF59F626FF6B19006B3F3B /* BinaryFloatingPoint+Extenstions.swift in Sources */,
@@ -668,6 +675,7 @@
 				1F49EFFE26EE22B40028C06F /* TestHelpers.swift in Sources */,
 				1FF00C6A271A866D00AF823D /* CountableTests.swift in Sources */,
 				1FFF598926FF5616006B3F3B /* VerticalGlyphForm_Tests.swift in Sources */,
+				1FE35EBC274CF419008E1715 /* GCDTimerTests.swift in Sources */,
 				1FF72AE926F37087007E8BC6 /* DelegatedTests.swift in Sources */,
 				1FFF598526FF5616006B3F3B /* NSAttributedString_Tests.swift in Sources */,
 				1FFF598726FF5616006B3F3B /* SpellingState_Tests.swift in Sources */,
