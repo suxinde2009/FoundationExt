@@ -105,6 +105,7 @@
 		1FFF59F226FF6AC0006B3F3B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF59F126FF6AC0006B3F3B /* String+Extensions.swift */; };
 		1FFF59F626FF6B19006B3F3B /* BinaryFloatingPoint+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF59F526FF6B19006B3F3B /* BinaryFloatingPoint+Extenstions.swift */; };
 		1FFF59FA26FF6B45006B3F3B /* BinaryInteger+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF59F926FF6B45006B3F3B /* BinaryInteger+Extensions.swift */; };
+		41A95606275E4C5000AB3466 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A95605275E4C5000AB3466 /* Lock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +220,7 @@
 		1FFF59F126FF6AC0006B3F3B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		1FFF59F526FF6B19006B3F3B /* BinaryFloatingPoint+Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryFloatingPoint+Extenstions.swift"; sourceTree = "<group>"; };
 		1FFF59F926FF6B45006B3F3B /* BinaryInteger+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryInteger+Extensions.swift"; sourceTree = "<group>"; };
+		41A95605275E4C5000AB3466 /* Lock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +303,7 @@
 				1F05464F26ECD62000E64F3C /* CallbackQueue.swift */,
 				1F63105C26EB0AAC00BCF22B /* Atomic */,
 				1FE35EB7274CED0E008E1715 /* GCDTimer.swift */,
+				41A95605275E4C5000AB3466 /* Lock.swift */,
 			);
 			path = Concurrent;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				1FF00C62271A847000AF823D /* ResuseQueue.swift in Sources */,
 				1FFF59DD26FF63E1006B3F3B /* Tree.swift in Sources */,
 				1FE7CA3D2700A20700CA59E2 /* CGRect+Extensions.swift in Sources */,
+				41A95606275E4C5000AB3466 /* Lock.swift in Sources */,
 				1F05465F26ECE9B200E64F3C /* Runtime.swift in Sources */,
 				1FFF596C26FF555C006B3F3B /* NSMutableAttributedString+SwiftyAttributes.swift in Sources */,
 				1FFF596B26FF555C006B3F3B /* NSString+SwiftyAttributes.swift in Sources */,
