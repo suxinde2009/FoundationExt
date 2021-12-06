@@ -106,6 +106,8 @@
 		1FFF59F626FF6B19006B3F3B /* BinaryFloatingPoint+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF59F526FF6B19006B3F3B /* BinaryFloatingPoint+Extenstions.swift */; };
 		1FFF59FA26FF6B45006B3F3B /* BinaryInteger+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF59F926FF6B45006B3F3B /* BinaryInteger+Extensions.swift */; };
 		41A95606275E4C5000AB3466 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A95605275E4C5000AB3466 /* Lock.swift */; };
+		41A9560A275E543400AB3466 /* Atomic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A95609275E543400AB3466 /* Atomic.swift */; };
+		41A9560E275E546C00AB3466 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9560D275E546C00AB3466 /* Optional.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -221,6 +223,8 @@
 		1FFF59F526FF6B19006B3F3B /* BinaryFloatingPoint+Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryFloatingPoint+Extenstions.swift"; sourceTree = "<group>"; };
 		1FFF59F926FF6B45006B3F3B /* BinaryInteger+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BinaryInteger+Extensions.swift"; sourceTree = "<group>"; };
 		41A95605275E4C5000AB3466 /* Lock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
+		41A95609275E543400AB3466 /* Atomic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atomic.swift; sourceTree = "<group>"; };
+		41A9560D275E546C00AB3466 /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +291,7 @@
 				1F52E14E27048F9900B956FE /* Array2D.swift */,
 				1FF00C61271A847000AF823D /* ResuseQueue.swift */,
 				1FF00C65271A861500AF823D /* Countable.swift */,
+				41A9560D275E546C00AB3466 /* Optional.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 			children = (
 				1F63105D26EB0AD500BCF22B /* AtomicVar.swift */,
 				1F87477726EF495B008B3FC3 /* AtomicInteger.swift */,
+				41A95609275E543400AB3466 /* Atomic.swift */,
 			);
 			path = Atomic;
 			sourceTree = "<group>";
@@ -601,6 +607,7 @@
 				1FFF59C426FF6277006B3F3B /* Array+Extensions.swift in Sources */,
 				1FFF597226FF555C006B3F3B /* Operators.swift in Sources */,
 				1FE7CA4D2700A43600CA59E2 /* Degrad.swift in Sources */,
+				41A9560A275E543400AB3466 /* Atomic.swift in Sources */,
 				1F05466726ECEA7700E64F3C /* Result.swift in Sources */,
 				1FF00C62271A847000AF823D /* ResuseQueue.swift in Sources */,
 				1FFF59DD26FF63E1006B3F3B /* Tree.swift in Sources */,
@@ -609,6 +616,7 @@
 				1F05465F26ECE9B200E64F3C /* Runtime.swift in Sources */,
 				1FFF596C26FF555C006B3F3B /* NSMutableAttributedString+SwiftyAttributes.swift in Sources */,
 				1FFF596B26FF555C006B3F3B /* NSString+SwiftyAttributes.swift in Sources */,
+				41A9560E275E546C00AB3466 /* Optional.swift in Sources */,
 				1FFF596D26FF555C006B3F3B /* NSAttributedString+SwiftyAttributes.swift in Sources */,
 				1F05466B26ECEB1A00E64F3C /* Delegate.swift in Sources */,
 				1F01C38526FB4D4900347660 /* Dictionary_Extensions.swift in Sources */,
