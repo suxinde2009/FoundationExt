@@ -35,10 +35,7 @@ import Foundation
         self.name = name
         
         let count = min(
-            max(
-                1,
-                ProcessInfo.processInfo.activeProcessorCount
-            ),
+            max(1,ProcessInfo.processInfo.activeProcessorCount),
             DispatchQueuePool.MaxQueueCountInOnePool
         )
         

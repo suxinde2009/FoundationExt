@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public protocol Resuable: class {
+public protocol Resuable: AnyObject {
     var canReuse: Bool { get }
     func prepareForReuse()
 }
