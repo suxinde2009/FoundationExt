@@ -14,7 +14,7 @@ fileprivate class SubClassA2: ClassA {}
 fileprivate class ClassB: ClassA {}
 fileprivate class ClassC: ClassB {}
 
-protocol MockProtocol : class {}
+protocol MockProtocol : AnyObject {}
 
 class NSMockClass : NSObject {
     weak var delegate : MockProtocol?

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-public protocol Lockable: class {
+public protocol Lockable: AnyObject {
     func lock()
     func unlock()
 }
